@@ -1,0 +1,206 @@
+<UserControl x:Class="Phonexis.Views.AudioFilenameRetrieverView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Phonexis.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header with Title and Back Button -->
+        <Grid Grid.Row="0" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Column="0"
+                       Text="Audio Filename Retriever"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+            
+            <Button Grid.Column="1"
+                    x:Name="BackButton"
+                    Content="Back to Main View"
+                    Padding="10,5"
+                    Click="BackButton_Click"
+                    Background="#DB4437"
+                    Foreground="White"
+                    HorizontalAlignment="Right"/>
+        </Grid>
+
+        <!-- Folder Selection -->
+        <Border Grid.Row="1" 
+                Background="#F5F5F5" 
+                Padding="15" 
+                Margin="0,0,0,15" 
+                CornerRadius="5" 
+                BorderBrush="#E0E0E0" 
+                BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" 
+                           Text="Select Folder Containing Audio Files:" 
+                           VerticalAlignment="Center"/>
+                <Button Grid.Row="0" Grid.Column="1" 
+                        x:Name="BrowseFolderButton" 
+                        Content="Browse Folder" 
+                        Padding="10,5" 
+                        Margin="10,0,0,0" 
+                        Click="BrowseFolderButton_Click"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                           x:Name="FolderPathTextBlock" 
+                           Text="Folder Selected: None" 
+                           Margin="0,10,0,0"/>
+            </Grid>
+        </Border>
+
+        <!-- Scan Mode -->
+        <Border Grid.Row="2" 
+                Background="#F5F5F5" 
+                Padding="15" 
+                Margin="0,0,0,15" 
+                CornerRadius="5" 
+                BorderBrush="#E0E0E0" 
+                BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" 
+                           Text="Select Scan Mode:" 
+                           VerticalAlignment="Center"/>
+                <ComboBox Grid.Column="1" 
+                          x:Name="ScanModeComboBox" 
+                          Margin="10,0,0,0" 
+                          SelectedIndex="0">
+                    <ComboBoxItem Content="Master Folder Only"/>
+                    <ComboBoxItem Content="Master + Subfolders"/>
+                </ComboBox>
+            </Grid>
+        </Border>
+
+        <!-- File Types -->
+        <Border Grid.Row="3" 
+                Background="#F5F5F5" 
+                Padding="15" 
+                Margin="0,0,0,15" 
+                CornerRadius="5" 
+                BorderBrush="#E0E0E0" 
+                BorderThickness="1">
+            <StackPanel>
+                <TextBlock Text="Select File Types to Include:" 
+                           Margin="0,0,0,10"/>
+                <Grid x:Name="FileTypesGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- CheckBoxes will be added programmatically -->
+                    <CheckBox Grid.Row="0" Grid.Column="0" x:Name="MP3CheckBox" Content="MP3" IsChecked="True" Margin="0,5"/>
+                    <CheckBox Grid.Row="0" Grid.Column="1" x:Name="AACCheckBox" Content="AAC" Margin="0,5"/>
+                    <CheckBox Grid.Row="0" Grid.Column="2" x:Name="PCMCheckBox" Content="PCM" Margin="0,5"/>
+                    <CheckBox Grid.Row="0" Grid.Column="3" x:Name="WMACheckBox" Content="WMA" Margin="0,5"/>
+                    
+                    <CheckBox Grid.Row="1" Grid.Column="0" x:Name="FLACCheckBox" Content="FLAC" Margin="0,5"/>
+                    <CheckBox Grid.Row="1" Grid.Column="1" x:Name="WAVCheckBox" Content="WAV" Margin="0,5"/>
+                    <CheckBox Grid.Row="1" Grid.Column="2" x:Name="M4ACheckBox" Content="M4A" Margin="0,5"/>
+                    <CheckBox Grid.Row="1" Grid.Column="3" x:Name="OPUSCheckBox" Content="OPUS" Margin="0,5"/>
+                    
+                    <CheckBox Grid.Row="2" Grid.Column="0" x:Name="AIFFCheckBox" Content="AIFF" Margin="0,5"/>
+                    <CheckBox Grid.Row="2" Grid.Column="1" x:Name="M4RCheckBox" Content="M4R" Margin="0,5"/>
+                    <CheckBox Grid.Row="2" Grid.Column="2" x:Name="ALACCheckBox" Content="ALAC" Margin="0,5"/>
+                    <CheckBox Grid.Row="2" Grid.Column="3" x:Name="OGGCheckBox" Content="OGG" Margin="0,5"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <!-- Output File -->
+        <Border Grid.Row="4" 
+                Background="#F5F5F5" 
+                Padding="15" 
+                Margin="0,0,0,15" 
+                CornerRadius="5" 
+                BorderBrush="#E0E0E0" 
+                BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" 
+                           Text="Select Output File (.txt):" 
+                           VerticalAlignment="Center"/>
+                <Button Grid.Row="0" Grid.Column="1" 
+                        x:Name="BrowseOutputButton" 
+                        Content="Browse Output File" 
+                        Padding="10,5" 
+                        Margin="10,0,0,0" 
+                        Click="BrowseOutputButton_Click"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                           x:Name="OutputFileTextBlock" 
+                           Text="Output File: None" 
+                           Margin="0,10,0,0"/>
+            </Grid>
+        </Border>
+
+        <!-- Run Button -->
+        <Button Grid.Row="5" 
+                x:Name="RetrieveButton" 
+                Content="Retrieve Audio Filenames" 
+                Padding="15,10" 
+                Margin="0,10,0,20" 
+                HorizontalAlignment="Center" 
+                Click="RetrieveButton_Click" 
+                Background="#4285F4" 
+                Foreground="White" 
+                FontWeight="Bold"/>
+
+        <!-- Status -->
+        <Border Grid.Row="6" 
+                Background="#F5F5F5" 
+                Padding="15" 
+                CornerRadius="5" 
+                BorderBrush="#E0E0E0" 
+                BorderThickness="1">
+            <TextBlock x:Name="StatusTextBlock" 
+                       Text="Ready to retrieve audio filenames." 
+                       TextWrapping="Wrap"/>
+        </Border>
+    </Grid>
+</UserControl>

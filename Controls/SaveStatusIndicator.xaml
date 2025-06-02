@@ -1,0 +1,79 @@
+<UserControl x:Class="Phonexis.Controls.SaveStatusIndicator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="120">
+    
+    <UserControl.Resources>
+        <!-- Animazione per l'icona di salvataggio -->
+        <Storyboard x:Key="SavingAnimation" RepeatBehavior="Forever">
+            <DoubleAnimation Storyboard.TargetName="CloudIcon" 
+                           Storyboard.TargetProperty="Opacity"
+                           From="0.3" To="1.0" Duration="0:0:1" 
+                           AutoReverse="True"/>
+        </Storyboard>
+        
+        <!-- Animazione per il successo -->
+        <Storyboard x:Key="SavedAnimation">
+            <ColorAnimation Storyboard.TargetName="CloudIconBrush" 
+                          Storyboard.TargetProperty="Color"
+                          To="#34A853" Duration="0:0:0.3"/>
+            <DoubleAnimation Storyboard.TargetName="CheckIcon" 
+                           Storyboard.TargetProperty="Opacity"
+                           From="0" To="1" Duration="0:0:0.3"/>
+        </Storyboard>
+        
+        <!-- Animazione per l'errore -->
+        <Storyboard x:Key="ErrorAnimation">
+            <ColorAnimation Storyboard.TargetName="CloudIconBrush" 
+                          Storyboard.TargetProperty="Color"
+                          To="#EA4335" Duration="0:0:0.3"/>
+        </Storyboard>
+        
+        <!-- Animazione per il reset -->
+        <Storyboard x:Key="ResetAnimation">
+            <ColorAnimation Storyboard.TargetName="CloudIconBrush" 
+                          Storyboard.TargetProperty="Color"
+                          To="#666666" Duration="0:0:0.3"/>
+            <DoubleAnimation Storyboard.TargetName="CheckIcon" 
+                           Storyboard.TargetProperty="Opacity"
+                           To="0" Duration="0:0:0.3"/>
+        </Storyboard>
+    </UserControl.Resources>
+    
+    <Border Background="Transparent" 
+            Padding="8,4" 
+            CornerRadius="12"
+            ToolTip="{Binding StatusMessage, RelativeSource={RelativeSource AncestorType=UserControl}}">
+        
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <!-- Icona Cloud -->
+            <Grid Width="16" Height="16" Margin="0,0,6,0">
+                <!-- Cloud Icon -->
+                <Path x:Name="CloudIcon"
+                      Data="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"
+                      Stretch="Uniform">
+                    <Path.Fill>
+                        <SolidColorBrush x:Name="CloudIconBrush" Color="#666666"/>
+                    </Path.Fill>
+                </Path>
+                
+                <!-- Check Icon (overlay) -->
+                <Path x:Name="CheckIcon" 
+                      Data="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                      Fill="#34A853" 
+                      Stretch="Uniform"
+                      Opacity="0"/>
+            </Grid>
+            
+            <!-- Status Text -->
+            <TextBlock x:Name="StatusText" 
+                       Text="Salvato" 
+                       FontSize="11" 
+                       Foreground="#666666"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+    </Border>
+</UserControl>

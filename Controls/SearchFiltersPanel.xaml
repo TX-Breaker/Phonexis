@@ -1,0 +1,102 @@
+<UserControl x:Class="Phonexis.Controls.SearchFiltersPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:properties="clr-namespace:Phonexis.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="120" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <!-- Stile per i ComboBox -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="MinWidth" Value="150"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#CCCCCC"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        
+        <!-- Stile per le Label -->
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <Border Background="#F8F9FA" 
+            BorderBrush="#E0E0E0" 
+            BorderThickness="1" 
+            CornerRadius="4" 
+            Padding="15,10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Titolo -->
+            <TextBlock Grid.Row="0"
+                       Text="Search Filters"
+                       FontWeight="Bold"
+                       FontSize="14"
+                       Foreground="#2C3E50"
+                       Margin="0,0,0,10"/>
+            
+            <!-- Filtri -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Filtro Durata -->
+                <Label Grid.Column="0"
+                       Content="Duration"/>
+                <ComboBox Grid.Column="1"
+                          x:Name="DurationComboBox"
+                          SelectionChanged="DurationComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Any Duration" Tag="Any"/>
+                    <ComboBoxItem Content="Short (&lt; 4 min)" Tag="Short"/>
+                    <ComboBoxItem Content="Medium (4-20 min)" Tag="Medium"/>
+                    <ComboBoxItem Content="Long (&gt; 20 min)" Tag="Long"/>
+                </ComboBox>
+                
+                <!-- Filtro Data -->
+                <Label Grid.Column="3"
+                       Content="Upload Date"/>
+                <ComboBox Grid.Column="4"
+                          x:Name="DateComboBox"
+                          SelectionChanged="DateComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Any Date" Tag="Any"/>
+                    <ComboBoxItem Content="Last Hour" Tag="LastHour"/>
+                    <ComboBoxItem Content="Today" Tag="Today"/>
+                    <ComboBoxItem Content="This Week" Tag="ThisWeek"/>
+                    <ComboBoxItem Content="This Month" Tag="ThisMonth"/>
+                    <ComboBoxItem Content="This Year" Tag="ThisYear"/>
+                </ComboBox>
+                
+                <!-- Filtro Qualità -->
+                <Label Grid.Column="6"
+                       Content="Quality"/>
+                <ComboBox Grid.Column="7"
+                          x:Name="QualityComboBox"
+                          SelectionChanged="QualityComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Any Quality" Tag="Any"/>
+                    <ComboBoxItem Content="High Quality (&gt; 100K views)" Tag="High"/>
+                    <ComboBoxItem Content="Medium Quality (10K-100K views)" Tag="Medium"/>
+                    <ComboBoxItem Content="Low Quality (&lt; 10K views)" Tag="Low"/>
+                </ComboBox>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
