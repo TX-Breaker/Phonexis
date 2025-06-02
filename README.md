@@ -15,23 +15,25 @@ This is the Phonexis application, which allows you to search for YouTube videos 
 
 - Windows 10/11
 - .NET 6.0 Runtime or higher
-- Internet connection (for Youtubees)
-- YouTube Data v3 API Key
+- Internet connection (for Youtube Searches)
+- YouTube Data v3 API Key (you can obtain one here: https://console.cloud.google.com/apis/api/youtube.googleapis.com/)
 
 ## Installation
 
 1. Download the latest version from the repository
-2. Extract the ZIP file to a directory of your choice
-3. Run `Phonexis - TXT to YT Multisearch.exe`
+2. Execute .EXE installer file to a directory of your choice
+3. Finish the installation wizard procedure
+4. Run `Phonexis - TXT to YT Multisearch.exe`
 
 ## Usage
 
 1. Start the application
 2. Click "Browse .txt File" to select a text file containing song titles (one per line)
-3. Set your YouTube API key using the "Set API Key" button
+3. Set your YouTube API key using the "Set API Key" button in the Settings section
 4. Click "Start Youtube" to begin the search
 5. For each song, select a video from the results or click "Skip" to skip it
-6. Upon completion, the selected links will be saved to a file
+6. Upon completion, the selected links will be saved to a text file
+7. After that, you can batch download the videos on the link with a software such as "MediaHuman YouTube Downloader", or other mass downloader software of your choice.
 
 ## Development
 
@@ -41,20 +43,6 @@ This is the Phonexis application, which allows you to search for YouTube videos 
 - .NET 6.0 SDK
 - Knowledge of C# and WPF
 
-### Compiling
-
-1. Open the solution in Visual Studio
-2. Restore NuGet packages
-3. Compile the solution
-
-### Project Structure
-
-- **Models**: Contains data models
-- **ViewModels**: Contains ViewModels for the MVVM pattern
-- **Views**: Contains WPF views
-- **Services**: Contains services for data access and APIs
-- **Helpers**: Contains utility classes
-- **Resources**: Contains resources such as images and localization files
 
 ## License
 
