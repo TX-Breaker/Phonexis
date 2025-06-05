@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- MainWindow Titles/Labels -->
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Phonexis - TXT a YT Multibúsqueda</value>
+  </data>
+  <data name="HeaderTitle" xml:space="preserve">
+    <value>Phonexis - TXT to YT Multisearch</value> <!-- Keeping the same brand name in all languages -->
+  </data>
+  <data name="CopyrightNotice" xml:space="preserve">
+    <value>© 2025 TX-Breaker. Utiliza .NET, CommunityToolkit.Mvvm, Microsoft.Data.Sqlite. Consulte las licencias para más detalles.</value>
+  </data>
+  <data name="SelectFileLabelDefault" xml:space="preserve">
+    <value>Seleccione Archivo de Texto de Títulos de Canciones:</value>
+  </data>
+   <data name="SelectFileLabelSelected" xml:space="preserve">
+    <value>Archivo Seleccionado: {0}</value>
+  </data>
+
+  <!-- MainWindow Buttons -->
+  <data name="BrowseButton" xml:space="preserve">
+    <value>Explorar Archivo .txt</value>
+  </data>
+  <data name="StartButton" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="SaveStateButton" xml:space="preserve">
+    <value>Guardar Estado Actual</value>
+  </data>
+  <data name="ResumeStateButton" xml:space="preserve">
+    <value>Reanudar Último Estado</value>
+  </data>
+  <data name="StartOverButton" xml:space="preserve">
+    <value>Comenzar de Nuevo</value>
+  </data>
+   <data name="SetApiKeyButton" xml:space="preserve">
+    <value>Establecer Clave API</value>
+  </data>
+
+  <!-- MainWindow Checkboxes -->
+   <data name="TestModeCheckbox" xml:space="preserve">
+    <value>Modo Prueba</value>
+  </data>
+   <data name="CacheOnlyModeCheckbox" xml:space="preserve">
+    <value>Modo Solo Caché</value>
+  </data>
+  
+  <!-- Search Results View Buttons (Dynamically created in MainViewModel) -->
+  <data name="EditQueryButton" xml:space="preserve">
+    <value>Editar Consulta</value>
+  </data>
+  <data name="RefreshResultsButton" xml:space="preserve">
+    <value>Actualizar Resultados</value>
+  </data>
+  <data name="GoBackButton" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="SkipSongButton" xml:space="preserve">
+    <value>Omitir esta canción</value>
+  </data>
+  <data name="LoadMoreButton" xml:space="preserve">
+    <value>Cargar Más Resultados</value>
+  </data>
+
+  <!-- VideoResultControl Buttons -->
+  <data name="SelectButton" xml:space="preserve">
+    <value>Seleccionar</value>
+  </data>
+  <data name="OpenBrowserButton" xml:space="preserve">
+    <value>Abrir en Navegador</value>
+  </data>
+  <data name="FiltersTitle" xml:space="preserve">
+    <value>Filtros de Búsqueda</value>
+  </data>
+  <data name="DurationFilter" xml:space="preserve">
+    <value>Duración</value>
+  </data>
+  <data name="DateFilter" xml:space="preserve">
+    <value>Fecha de Subida</value>
+  </data>
+  <data name="QualityFilter" xml:space="preserve">
+    <value>Calidad</value>
+  </data>
+  <data name="AnyDuration" xml:space="preserve">
+    <value>Cualquier Duración</value>
+  </data>
+  <data name="Short" xml:space="preserve">
+    <value>Corto (&lt; 4 min)</value>
+  </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Medio (4-20 min)</value>
+  </data>
+  <data name="Long" xml:space="preserve">
+    <value>Largo (&gt; 20 min)</value>
+  </data>
+  <data name="AnyDate" xml:space="preserve">
+    <value>Cualquier Fecha</value>
+  </data>
+  <data name="LastHour" xml:space="preserve">
+    <value>Última Hora</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="ThisWeek" xml:space="preserve">
+    <value>Esta Semana</value>
+  </data>
+  <data name="ThisMonth" xml:space="preserve">
+    <value>Este Mes</value>
+  </data>
+  <data name="ThisYear" xml:space="preserve">
+    <value>Este Año</value>
+  </data>
+  <data name="AnyQuality" xml:space="preserve">
+    <value>Cualquier Calidad</value>
+  </data>
+  <data name="HighQuality" xml:space="preserve">
+    <value>Alta Calidad (&gt; 100K vistas)</value>
+  </data>
+  <data name="MediumQuality" xml:space="preserve">
+    <value>Calidad Media (10K-100K vistas)</value>
+  </data>
+  <data name="LowQuality" xml:space="preserve">
+    <value>Baja Calidad (&lt; 10K vistas)</value>
+  </data>
+  <data name="ResetEverything" xml:space="preserve">
+    <value>Resetear Todo</value>
+  </data>
+  <data name="ResetEverythingConfirmation" xml:space="preserve">
+    <value>Esto eliminará TODOS los datos de la aplicación incluyendo:\n\n• Claves API\n• Caché y base de datos\n• Preferencias del asistente\n• Estados de sesión\n• Todas las configuraciones\n\nEsta acción no se puede deshacer. ¿Estás seguro?</value>
+  </data>
+  <data name="ResetEverythingTitle" xml:space="preserve">
+    <value>Resetear Todo</value>
+  </data>
+  <data name="ResetEverythingSuccess" xml:space="preserve">
+    <value>Todos los datos de la aplicación han sido reseteados exitosamente. La aplicación se cerrará ahora. Por favor reiníciala para empezar de nuevo.</value>
+  </data>
+  <data name="ResetEverythingError" xml:space="preserve">
+    <value>Error durante el reseteo: {0}</value>
+  </data>
+  
+  <!-- VideoResultControl Labels -->
+   <data name="ChannelLabel" xml:space="preserve">
+    <value>Canal: {0}</value>
+  </data>
+   <data name="PublishedLabel" xml:space="preserve">
+    <value>Publicado el: {0}</value>
+  </data>
+  <data name="SourceTestLabel" xml:space="preserve">
+    <value>Resultado de Prueba</value>
+  </data>
+  <data name="SourceCacheLabel" xml:space="preserve">
+    <value>Resultado de Caché</value>
+  </data>
+  <data name="SourceApiLabel" xml:space="preserve">
+    <value>Resultado de API YouTube</value>
+  </data>
+
+  <!-- Messages/Dialogs -->
+  <data name="NoApiKeysTitle" xml:space="preserve">
+    <value>Clave API Faltante</value>
+  </data>
+   <data name="NoApiKeysMessage" xml:space="preserve">
+    <value>No ha establecido ninguna clave API. ¿Desea establecerla ahora?</value>
+  </data>
+   <data name="NoApiKeysError" xml:space="preserve">
+    <value>No se ha establecido ninguna clave API. La búsqueda no puede iniciarse.</value>
+  </data>
+   <data name="ErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+   <data name="NoSongsMessage" xml:space="preserve">
+    <value>No hay títulos de canciones cargados para buscar.</value>
+  </data>
+   <data name="NoSongsTitle" xml:space="preserve">
+    <value>Sin Canciones</value>
+  </data>
+   <data name="NoResultsFound" xml:space="preserve">
+    <value>No se encontraron resultados.</value>
+  </data>
+   <data name="SearchCompleteTitle" xml:space="preserve">
+    <value>Completado</value>
+  </data>
+   <data name="SearchCompleteMessage" xml:space="preserve">
+    <value>¡Búsqueda completada para todas las canciones!</value>
+  </data>
+   <data name="SummaryTitle" xml:space="preserve">
+    <value>Resumen de Búsqueda</value>
+  </data>
+   <data name="SummaryTotalSongs" xml:space="preserve">
+    <value>Total de canciones: {0}</value>
+  </data>
+   <data name="SummarySelectedLinks" xml:space="preserve">
+    <value>Enlaces seleccionados: {0}</value>
+  </data>
+   <data name="SummaryNoResults" xml:space="preserve">
+    <value>Canciones sin resultados: {0}</value>
+  </data>
+   <data name="SaveLinksButton" xml:space="preserve">
+    <value>Guardar enlaces en archivo</value>
+  </data>
+   <data name="RestartButton" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
+   <data name="NoLinksToSaveTitle" xml:space="preserve">
+    <value>Sin Enlaces</value>
+  </data>
+   <data name="NoLinksToSaveMessage" xml:space="preserve">
+    <value>No hay enlaces para guardar.</value>
+  </data>
+   <data name="SaveLinksDialogTitle" xml:space="preserve">
+    <value>Guardar enlaces en archivo</value>
+  </data>
+   <data name="SaveLinksSuccessTitle" xml:space="preserve">
+    <value>Guardado Completado</value>
+  </data>
+   <data name="SaveLinksSuccessMessage" xml:space="preserve">
+    <value>{0} enlaces guardados en el archivo {1}</value>
+  </data>
+   <data name="SaveLinksError" xml:space="preserve">
+    <value>Error al guardar enlaces: {0}</value>
+  </data>
+   <data name="StateSavedTitle" xml:space="preserve">
+    <value>Estado Guardado</value>
+  </data>
+   <data name="StateSavedMessage" xml:space="preserve">
+    <value>Estado de la aplicación guardado con éxito.</value>
+  </data>
+   <data name="StateSaveError" xml:space="preserve">
+    <value>Se produjo un error al guardar el estado de la aplicación.</value>
+  </data>
+   <data name="StateRestoredTitle" xml:space="preserve">
+    <value>Estado Restaurado</value>
+  </data>
+   <data name="StateRestoredMessage" xml:space="preserve">
+    <value>Estado anterior restaurado con éxito.\n\nArchivo: {0}\nPosición Actual: {1} de {2}\nEnlaces Seleccionados: {3}</value>
+  </data>
+   <data name="StateRestoreErrorTitle" xml:space="preserve">
+    <value>Error de Restauración</value>
+  </data>
+   <data name="StateRestoreInvalidMessage" xml:space="preserve">
+    <value>No se encontró ningún estado válido para restaurar. Seleccione un archivo de texto para comenzar.</value>
+  </data>
+   <data name="NoSavedStateTitle" xml:space="preserve">
+    <value>Sin Estado Guardado</value>
+  </data>
+   <data name="NoSavedStateMessage" xml:space="preserve">
+    <value>No se encontró ningún estado guardado para restaurar.</value>
+  </data>
+   <data name="StartOverTitle" xml:space="preserve">
+    <value>Comenzar de Nuevo</value>
+  </data>
+   <data name="StartOverMessage" xml:space="preserve">
+    <value>¿Está seguro de que desea comenzar de nuevo? Se perderá todo el progreso.</value>
+  </data>
+   <data name="StartOverConfirmTitle" xml:space="preserve">
+    <value>Reiniciado</value>
+  </data>
+   <data name="StartOverConfirmMessage" xml:space="preserve">
+    <value>La aplicación ha sido reiniciada. Puede comenzar de nuevo desde cero.</value>
+  </data>
+   <data name="SetApiKeyDialogTitle" xml:space="preserve">
+    <value>Establecer Claves API</value>
+  </data>
+   <data name="SetApiKeyDialogLabel" xml:space="preserve">
+    <value>Ingrese las claves API de YouTube separadas por comas:</value>
+  </data>
+   <data name="ApiKeySetSuccessTitle" xml:space="preserve">
+    <value>Claves API Establecidas</value>
+  </data>
+   <data name="ApiKeySetSuccessMessage" xml:space="preserve">
+    <value>{0} claves API establecidas con éxito.</value>
+  </data>
+   <data name="ApiKeySetErrorTitle" xml:space="preserve">
+    <value>Error de Clave API</value>
+  </data>
+   <data name="ApiKeySetErrorMessage" xml:space="preserve">
+    <value>No se ingresó ninguna clave API válida.</value>
+  </data>
+   <data name="ApiCallsToday" xml:space="preserve">
+    <value>Llamadas API Hoy</value>
+  </data>
+   <data name="CreateTXT" xml:space="preserve">
+    <value>Crear TXT</value>
+  </data>
+   <data name="BrowseMenuItem" xml:space="preserve">
+    <value>Examinar Archivo TXT...</value>
+  </data>
+   <data name="CreateTxtMenuItem" xml:space="preserve">
+    <value>Crear TXT desde Audio...</value>
+  </data>
+   <data name="SaveStateMenuItem" xml:space="preserve">
+    <value>Guardar Sesión</value>
+  </data>
+   <data name="ResumeStateMenuItem" xml:space="preserve">
+    <value>Reanudar Sesión</value>
+  </data>
+   <data name="StartOverMenuItem" xml:space="preserve">
+    <value>Empezar de Nuevo</value>
+  </data>
+   <data name="ExitMenuItem" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+   <data name="EditQueryMenuItem" xml:space="preserve">
+    <value>Editar Consulta Actual</value>
+  </data>
+   <data name="SettingsMenuItem" xml:space="preserve">
+    <value>Configuración...</value>
+  </data>
+   <data name="AboutMenuItem" xml:space="preserve">
+    <value>Acerca de...</value>
+  </data>
+   <data name="FileMenu" xml:space="preserve">
+    <value>_Archivo</value>
+  </data>
+   <data name="EditMenu" xml:space="preserve">
+    <value>_Editar</value>
+  </data>
+   <data name="ToolsMenu" xml:space="preserve">
+    <value>_Herramientas</value>
+  </data>
+   <data name="HelpMenu" xml:space="preserve">
+    <value>_Ayuda</value>
+  </data>
+   <data name="StatusReady" xml:space="preserve">
+    <value>Listo</value>
+  </data>
+   <data name="StatusFileLoaded" xml:space="preserve">
+    <value>Archivo cargado: {0}</value>
+  </data>
+   <data name="StatusSearching" xml:space="preserve">
+    <value>Buscando...</value>
+  </data>
+   <data name="StatusSearchComplete" xml:space="preserve">
+    <value>Búsqueda completa.</value>
+  </data>
+   <data name="StatusStateSaved" xml:space="preserve">
+    <value>Sesión guardada.</value>
+  </data>
+   <data name="StatusResuming" xml:space="preserve">
+    <value>Reanudando sesión...</value>
+  </data>
+  <!-- Settings Window New Strings -->
+   <data name="Modes" xml:space="preserve">
+    <value>Modos</value>
+  </data>
+   <data name="TestModeDescription" xml:space="preserve">
+    <value>Usar datos de prueba en lugar de realizar llamadas API reales.</value>
+  </data>
+   <data name="ApiKeySectionTitle" xml:space="preserve">
+    <value>Clave API de YouTube</value>
+  </data>
+   <data name="CurrentApiKeyLabel" xml:space="preserve">
+    <value>Clave API actual:</value>
+  </data>
+   <data name="ApiKeyExplanation1" xml:space="preserve">
+     <value>Ingrese las claves API separadas por coma (sin espacios)</value>
+   </data>
+   <data name="ApiKeyExplanation2" xml:space="preserve">
+     <value>Cada clave admite 10.000 consultas/día. El sistema rota las claves automáticamente.</value>
+   </data>
+   <data name="ApiStatsTitle" xml:space="preserve">
+     <value>Estado y Uso de la API</value>
+   </data>
+   <data name="ApiLimitDescription" xml:space="preserve">
+     <value>Para ver el uso real de la cuota de API, consulte la pantalla de Google Cloud Console con la cuenta de Google correspondiente a la clave API creada, en el enlace: https://console.cloud.google.com/apis/api/youtube.googleapis.com</value>
+   </data>
+   <data name="ClearCacheExplanation" xml:space="preserve">
+    <value>Elimina todos los resultados de búsqueda y miniaturas almacenados en caché.</value>
+  </data>
+   <data name="AppTitle" xml:space="preserve">
+     <value>Phonexis - TXT a YT Multisearch</value>
+   </data>
+   <data name="AppDescription" xml:space="preserve">
+     <value>Aplicación para encontrar enlaces de YouTube a partir de títulos de canciones.</value>
+   </data>
+   <data name="TechnologiesUsedTitle" xml:space="preserve">
+    <value>Tecnologías utilizadas:</value>
+  </data>
+   <data name="SavedStateInfoFormat" xml:space="preserve">
+    <value>Último guardado: {0} | Archivo: {1} | Progreso: {2}/{3}</value>
+  </data>
+   <data name="OkButton" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+   <data name="CancelButton" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+   <data name="YesButton" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+   <data name="NoButton" xml:space="preserve">
+    <value>No</value>
+  </data>
+<!-- Edit Query Dialog -->
+  <data name="EditQueryDialogTitle" xml:space="preserve">
+    <value>Editar Consulta</value>
+  </data>
+  <data name="EditQueryDialogLabel" xml:space="preserve">
+    <value>Edite la consulta de búsqueda:</value>
+  </data>
+  
+  <!-- Settings Dialog -->
+  <data name="Settings" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="ClearCacheConfirmation" xml:space="preserve">
+    <value>¿Está seguro de que desea limpiar la caché? Se eliminarán todos los resultados de búsqueda y miniaturas en caché.</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmación</value>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>La caché se ha limpiado con éxito.</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="YouTubeApiKey" xml:space="preserve">
+    <value>Clave API de YouTube</value>
+  </data>
+  <data name="ChangeApiKey" xml:space="preserve">
+    <value>Cambiar Clave API</value>
+  </data>
+  <data name="EnterApiKey" xml:space="preserve">
+    <value>Ingrese la clave API:</value>
+  </data>
+  <data name="TestMode" xml:space="preserve">
+    <value>Modo Prueba</value>
+  </data>
+  <data name="CacheOnlyMode" xml:space="preserve">
+    <value>Modo Solo Caché</value>
+  </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>Vaciar caché</value>
+  </data>
+  <data name="CacheOnlyModeDescription" xml:space="preserve">
+    <value>Usar solo los resultados ya presentes en la caché local</value>
+  </data>
+  <data name="ApiCounterLabel" xml:space="preserve">
+    <value>Llamadas API Usadas: {0}</value>
+  </data>
+  <data name="ApiKeyPlaceholder" xml:space="preserve">
+    <value>Ingrese claves API (separadas por comas)...</value>
+  </data>
+  <data name="ApiKeyHelpText" xml:space="preserve">
+    <value>Ingrese las claves API separadas por coma (sin espacios). Cada clave admite 10,000 consultas/día. El sistema rota las claves automáticamente.</value>
+  </data>
+  <data name="MultipleKeysSet" xml:space="preserve">
+    <value>[Múltiples Claves Establecidas]</value>
+  </data>
+  <data name="DuplicateRequestProtectionDescription" xml:space="preserve">
+    <value>Protección contra solicitudes duplicadas</value> <!-- TODO: Find where to use this in Settings UI -->
+  </data>
+  <data name="ApiKeyCountFormat" xml:space="preserve">
+    <value>Clave ...{0}: {1} - {2}/{3} llamadas</value>
+  </data>
+  <data name="StatusActive" xml:space="preserve">
+    <value>Activa</value>
+  </data>
+  <data name="StatusExhausted" xml:space="preserve">
+    <value>Agotada</value>
+  </data>
+  <data name="AllApiKeysFailedTitle" xml:space="preserve">
+    <value>Error de API</value>
+  </data>
+  <data name="AllApiKeysFailedMessage" xml:space="preserve">
+    <value>Error al recuperar los resultados. Todas las claves API configuradas fallaron o excedieron su cuota diaria.</value>
+  </data>
+  <data name="SearchErrorTitle" xml:space="preserve">
+    <value>Error de Búsqueda</value>
+  </data>
+  <data name="SearchErrorMessage" xml:space="preserve">
+    <value>Se produjo un error inesperado durante la búsqueda: {0}</value>
+  </data>
+  <data name="YouTubeApiKey" xml:space="preserve">
+    <value>Clave API de YouTube</value>
+  </data>
+  <data name="CurrentApiKey" xml:space="preserve">
+    <value>Clave API actual:</value>
+  </data>
+  <data name="ChangeApiKey" xml:space="preserve">
+    <value>Cambiar Clave API</value>
+  </data>
+  <data name="ApiKeyDescription1" xml:space="preserve">
+    <value>Ingrese las claves API separadas por coma (sin espacios)</value>
+  </data>
+  <data name="ApiKeyDescription2" xml:space="preserve">
+    <value>Cada clave admite 10.000 consultas/día. El sistema rota las claves automáticamente.</value>
+  </data>
+  <data name="ApiStats" xml:space="preserve">
+    <value>Estado y Uso de la API</value>
+  </data>
+  <data name="NoApiKeySet" xml:space="preserve">
+    <value>No hay clave API configurada</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versión</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="TestMode" xml:space="preserve">
+    <value>Modo de Prueba</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ClearCacheConfirmation" xml:space="preserve">
+    <value>¿Está seguro de que desea limpiar la caché? Esto eliminará todos los resultados de búsqueda y miniaturas almacenados en caché.</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmación</value>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>Caché limpiada con éxito.</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="ApiKeyHelpText" xml:space="preserve">
+    <value>Ingrese sus claves YouTube Data API v3 separadas por coma (sin espacios). Cada clave admite 10.000 consultas/día. El sistema rota automáticamente las claves cuando una alcanza su límite.</value>
+  </data>
+</root>

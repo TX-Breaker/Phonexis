@@ -1,0 +1,285 @@
+<Window x:Class="Phonexis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Phonexis"
+        xmlns:helpers="clr-namespace:Phonexis.Helpers"
+        xmlns:properties="clr-namespace:Phonexis.Properties"
+        xmlns:controls="clr-namespace:Phonexis.Controls"
+        mc:Ignorable="d"
+        Title="Phonexis - TXT to YT Multisearch" Height="1200" Width="1300"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+    <!-- Window Title is set in code-behind using LocalizationHelper -->
+    
+    <Window.Resources>
+        <!-- Stili per i pulsanti -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#4285F4"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="4"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#5294FF"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#3367D6"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#CCCCCC"/>
+                                <Setter Property="Foreground" Value="#888888"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!-- Stili per i checkbox -->
+        <Style TargetType="CheckBox">
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+        <!-- Stili per i progressbar -->
+        <Style TargetType="ProgressBar">
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="Foreground" Value="#4285F4"/>
+            <Setter Property="Background" Value="#E0E0E0"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Header -->
+            <RowDefinition Height="Auto"/> <!-- Button Bar -->
+            <RowDefinition Height="Auto"/> <!-- Menu Bar -->
+            <RowDefinition Height="Auto"/> <!-- Selected File -->
+            <RowDefinition Height="Auto"/> <!-- Search Filters -->
+            <RowDefinition Height="*"/>    <!-- Main Content -->
+            <RowDefinition Height="Auto"/> <!-- Footer -->
+            <RowDefinition Height="Auto"/> <!-- Status Bar -->
+        </Grid.RowDefinitions>
+        
+        <!-- Header con logo e titolo -->
+        <Border Grid.Row="0" Background="White" Padding="15,10,15,10" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1">
+             <Grid>
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="Auto"/>
+                     <ColumnDefinition Width="*"/>
+                     <ColumnDefinition Width="Auto"/>
+                 </Grid.ColumnDefinitions>
+                 
+                 <Image Grid.Column="0" Source="/Resources/Images/Logo_YT_Searcher.png" Width="40" Height="40" Margin="0,0,15,0" VerticalAlignment="Center"/>
+                 
+                 <!-- Header Title -->
+                 <TextBlock x:Name="HeaderTitleTextBlock" Grid.Column="1"
+                            Text="{x:Static properties:Strings.HeaderTitle}"
+                            FontSize="20"
+                            FontWeight="SemiBold"
+                            Foreground="#333333"
+                            VerticalAlignment="Center"/>
+                
+                <!-- API Call Counter Display -->
+                <Border Grid.Column="2"
+                        Background="#E8F5E9"
+                        CornerRadius="15"
+                        Padding="10,5"
+                        Margin="10,0,0,0"
+                        ToolTip="{Binding ApiCallCount, StringFormat={x:Static properties:Strings.ApiCallsToday}}">
+                    <StackPanel Orientation="Horizontal">
+                         <Path Data="M11 17h2v-1h1c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1h-3v-1h4V8h-2V7h-2v1h-1c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h3v1H9v2h2v1z"
+                              Fill="#2E7D32"
+                              Width="16"
+                              Height="16"
+                              Stretch="Uniform"
+                              VerticalAlignment="Center"
+                              Margin="0,0,5,0"/>
+                        <!-- TextBlock Text set via Binding, no need for x:Name or code-behind localization -->
+                        <TextBlock Text="{Binding ApiCounterText}"
+                                   Foreground="#2E7D32"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+             </Grid>
+         </Border>
+
+        <!-- Button Bar -->
+        <Border Grid.Row="1" Background="White" Padding="20,10" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="CreateTxtButton" Content="{x:Static properties:Strings.CreateTXT}"
+                        Command="{Binding OpenAudioFilenameRetrieverCommand}"
+                        Margin="0,0,10,0"
+                        MinWidth="120"/>
+                <Button x:Name="BrowseButton" Content="{x:Static properties:Strings.BrowseButton}"
+                        Command="{Binding BrowseTxtFileCommand}"
+                        Margin="0,0,10,0"
+                        MinWidth="120"/>
+                <Button x:Name="StartSearchButton" Content="{x:Static properties:Strings.StartButton}"
+                        Command="{Binding StartSearchCommand}"
+                        IsEnabled="{Binding CanStartSearch}"
+                        Margin="0,0,10,0"
+                        MinWidth="120"
+                        FontWeight="Bold"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Menu Bar (Simplified) with Mode Toggles -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Menu Grid.Column="0" Background="#FFFFFF" Padding="10,5" FontSize="13" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1">
+                <MenuItem x:Name="FileMenu" Header="_File">
+                    <MenuItem x:Name="SaveStateMenuItem" Header="{x:Static properties:Strings.SaveStateMenuItem}" Command="{Binding SaveStateCommand}"/>
+                    <MenuItem x:Name="ResumeStateMenuItem" Header="{x:Static properties:Strings.ResumeStateMenuItem}" Command="{Binding ResumeStateCommand}"/>
+                <MenuItem x:Name="StartOverMenuItem" Header="{x:Static properties:Strings.StartOverMenuItem}" Command="{Binding StartOverCommand}"/>
+                <Separator/>
+                <MenuItem x:Name="ExitMenuItem" Header="{x:Static properties:Strings.ExitMenuItem}" Click="ExitMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="ToolsMenu" Header="_Tools">
+                 <MenuItem x:Name="EditQueryMenuItem" Header="{x:Static properties:Strings.EditQueryMenuItem}" Command="{Binding EditQueryCommand}"/>
+                 <Separator/>
+                 <MenuItem x:Name="SettingsMenuItem" Header="{x:Static properties:Strings.SettingsMenuItem}" Command="{Binding OpenSettingsCommand}"/>
+            </MenuItem>
+            <MenuItem x:Name="HelpMenu" Header="_Help">
+                    <MenuItem x:Name="AboutMenuItem" Header="{x:Static properties:Strings.AboutMenuItem}" Click="AboutMenuItem_Click"/>
+                </MenuItem>
+            </Menu>
+
+            <!-- Mode Toggles -->
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,20,0" Background="#FFFFFF">
+                 <Border Background="#FFF0F0" CornerRadius="4" Padding="8,4" BorderBrush="#FFB3B3" BorderThickness="1">
+                     <CheckBox x:Name="CacheOnlyModeCheckBox"
+                              Content="{x:Static properties:Strings.CacheOnlyMode}"
+                              IsChecked="{Binding CacheOnlyMode, Mode=TwoWay}"
+                              ToolTip="{x:Static properties:Strings.CacheOnlyModeDescription}"
+                              Margin="0"/>
+                 </Border>
+            </StackPanel>
+        </Grid>
+        
+        <!-- Selected file -->
+        <Border Grid.Row="3" Background="White" Padding="20,10" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1">
+             <!-- TextBlock Text is bound, no need for x:Name -->
+             <TextBlock Text="{Binding TxtFileLabel}"
+                       VerticalAlignment="Center"
+                       Foreground="#555555"
+                       FontStyle="Italic"/>
+        </Border>
+
+        <!-- Search Filters Panel -->
+        <Border Grid.Row="4" Background="White" Padding="20,10" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1">
+            <controls:SearchFiltersPanel x:Name="SearchFiltersPanel"
+                                       FiltersChanged="SearchFiltersPanel_FiltersChanged"/>
+        </Border>
+
+        <!-- Main Content Area -->
+        <Border Grid.Row="5" Background="White" Margin="10" CornerRadius="5" BorderBrush="#E0E0E0" BorderThickness="1">
+             <ScrollViewer Padding="10">
+                 <ContentControl Content="{Binding CurrentView}"/>
+             </ScrollViewer>
+        </Border>
+        
+        <!-- Footer with Progress Bar and Copyright -->
+        <Border Grid.Row="6" Background="White" Padding="20,15" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0">
+             <Grid>
+                 <Grid.RowDefinitions>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/> <!-- Added row for copyright -->
+                 </Grid.RowDefinitions>
+                 
+                 <!-- Informazioni sullo stato salvato -->
+                 <Border Grid.Row="0"
+                         Background="#E8F5E9"
+                         Padding="10,5"
+                         Margin="0,0,0,10"
+                         CornerRadius="4"
+                         BorderBrush="#81C784"
+                         BorderThickness="1">
+                     <Grid>
+                         <Grid.ColumnDefinitions>
+                             <ColumnDefinition Width="*"/>
+                             <ColumnDefinition Width="Auto"/>
+                         </Grid.ColumnDefinitions>
+                         
+                         <!-- TextBlocks are bound -->
+                         <TextBlock Grid.Column="0"
+                                    Text="{Binding LastSaveInfo}"
+                                    Foreground="#2E7D32"
+                                    FontWeight="SemiBold"/>
+                         
+                         <TextBlock Grid.Column="1"
+                                    Text="{Binding ApiKeyInfo}"
+                                    Foreground="#2E7D32"
+                                    Margin="10,0,0,0"/>
+                     </Grid>
+                 </Border>
+                 
+                 <!-- Barra di progresso e contatore -->
+                 <Grid Grid.Row="1">
+                     <Grid.ColumnDefinitions>
+                         <ColumnDefinition Width="*"/>
+                         <ColumnDefinition Width="Auto"/>
+                     </Grid.ColumnDefinitions>
+                     
+                     <ProgressBar Grid.Column="0"
+                                  Value="{Binding ProgressValue, Mode=OneWay}"
+                                  Maximum="{Binding ProgressMaximum, Mode=OneWay}"/>
+                     
+                     <Border Grid.Column="1"
+                             Background="#F0F0F0"
+                             CornerRadius="15"
+                             Padding="10,5"
+                             Margin="10,0,0,0">
+                         <!-- TextBlock is bound -->
+                         <TextBlock VerticalAlignment="Center"
+                                    FontWeight="SemiBold"
+                                    Text="{Binding SongCounterText}"/>
+                     </Border>
+                 </Grid>
+                 
+                 <!-- Copyright Notice -->
+                 <TextBlock x:Name="CopyrightTextBlock" Grid.Row="2"
+                            Text="Copyright..."
+                            FontSize="10"
+                            Foreground="#888888"
+                            HorizontalAlignment="Center"
+                            Margin="0,10,0,0"/>
+             </Grid>
+        </Border>
+        
+        <!-- Status Bar -->
+        <StatusBar Grid.Row="7" Background="#F0F0F0" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0">
+             <StatusBarItem>
+                 <!-- TextBlock is bound -->
+                 <TextBlock Text="{Binding StatusMessage}" Margin="5,0"/>
+             </StatusBarItem>
+             
+             <!-- Separatore -->
+             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+             
+             <!-- Indicatore di salvataggio -->
+             <StatusBarItem HorizontalAlignment="Right">
+                 <controls:SaveStatusIndicator
+                     Status="{Binding SaveStatus}"
+                     StatusMessage="{Binding SaveStatusMessage}" />
+             </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
