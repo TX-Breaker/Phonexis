@@ -1,0 +1,172 @@
+<Window x:Class="Phonexis.Views.OnboardingDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:services="clr-namespace:Phonexis.Services"
+        xmlns:h="clr-namespace:Phonexis.Helpers"
+        Style="{StaticResource Window.Dialog}"
+        WindowStartupLocation="CenterOwner"
+        Title="{Binding Source={x:Static services:I18n.Instance}, Path=[ObTitle], Mode=OneWay}"
+        Width="720" Height="560" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="StepNo" TargetType="TextBlock" BasedOn="{StaticResource Text.Data}">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{DynamicResource Brush.ObiInkMuted}"/>
+            <Setter Property="Margin" Value="0,0,0,14"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="64"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Obi with the four steps; the current one is lit -->
+        <Border Background="{DynamicResource Brush.Obi}">
+            <StackPanel VerticalAlignment="Top" Margin="0,24,0,0">
+                <TextBlock x:Name="Step1No" Style="{StaticResource StepNo}" Text="01"/>
+                <TextBlock x:Name="Step2No" Style="{StaticResource StepNo}" Text="02"/>
+                <TextBlock x:Name="Step3No" Style="{StaticResource StepNo}" Text="03"/>
+                <TextBlock x:Name="Step4No" Style="{StaticResource StepNo}" Text="04"/>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Column="1" Margin="32,16,28,22">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- 1 · What Phonexis does -->
+            <StackPanel x:Name="Step1" h:Motion.Entrance="Rise">
+                <TextBlock Style="{StaticResource Text.H1}" Text="{Binding Source={x:Static services:I18n.Instance}, Path=[Ob1Title], Mode=OneWay}"/>
+                <TextBlock Style="{StaticResource Text.Secondary}" FontSize="13.5" Margin="0,10,0,22"
+                           Text="{Binding Source={x:Static services:I18n.Instance}, Path=[Ob1Text], Mode=OneWay}"/>
+                <ItemsControl x:Name="FlowList">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel h:Motion.Entrance="Rise" h:Motion.Stagger="True">
+                                <Border Style="{StaticResource Hairline}"/>
+                                <Grid Margin="0,11">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="34"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Style="{StaticResource Text.Icon}" Text="{Binding Item1}" FontSize="15"
+                                               HorizontalAlignment="Left" Foreground="{DynamicResource Brush.BrandText}"/>
+                                    <TextBlock Grid.Column="1" Style="{StaticResource Text.Body}" Text="{Binding Item2}"/>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+
+            <!-- 2 · API key -->
+            <StackPanel x:Name="Step2" Visibility="Collapsed" h:Motion.Entrance="Rise">
+                <TextBlock Style="{StaticResource Text.H1}" Text="{Binding Source={x:Static services:I18n.Instance}, Path=[Ob2Title], Mode=OneWay}"/>
+                <TextBlock Style="{StaticResource Text.Secondary}" FontSize="13.5" Margin="0,10,0,18"
+                           Text="{Binding Source={x:Static services:I18n.Instance}, Path=[Ob2Text], Mode=OneWay}"/>
+                <Grid Margin="0,0,0,18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Style="{StaticResource Text.Body}" FontWeight="SemiBold" VerticalAlignment="Center"
+                               Text="{Binding Source={x:Static services:I18n.Instance}, Path=[SearchEngineLabel], Mode=OneWay}"/>
+                    <ComboBox x:Name="SearchModeCombo" Grid.Column="1" Width="220"
+                              AutomationProperties.Name="{Binding Source={x:Static services:I18n.Instance}, Path=[SearchEngineLabel], Mode=OneWay}"/>
+                </Grid>
+                <TextBlock Style="{StaticResource Text.Label}" Margin="0,0,0,6"
+                           Text="{Binding Source={x:Static services:I18n.Instance}, Path=[ApiKeyOptionalLabel], Mode=OneWay}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="KeyBox" FontFamily="Consolas" Margin="0,0,8,0"
+                             Tag="{Binding Source={x:Static services:I18n.Instance}, Path=[KeyPlaceholder], Mode=OneWay}"/>
+                    <Button Grid.Column="1" Tag="&#xE710;" Click="AddKey_Click"
+                            Content="{Binding Source={x:Static services:I18n.Instance}, Path=[AddKey], Mode=OneWay}"/>
+                </Grid>
+                <TextBlock x:Name="KeysStatus" Style="{StaticResource Text.Data}" Margin="0,10,0,0"/>
+                <Button Style="{StaticResource Button.Link}" HorizontalAlignment="Left" Margin="-8,8,0,0" Tag="&#xE8A7;"
+                        Click="KeyHelp_Click"
+                        Content="{Binding Source={x:Static services:I18n.Instance}, Path=[GetKeyInstructions], Mode=OneWay}"/>
+                <Border Style="{StaticResource Hairline}" Margin="0,16,0,14"/>
+                <CheckBox x:Name="TestModeCheck" Style="{StaticResource CheckBox.Switch}">
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource Text.Body}" FontWeight="SemiBold"
+                                   Text="{Binding Source={x:Static services:I18n.Instance}, Path=[TestMode], Mode=OneWay}"/>
+                        <TextBlock Style="{StaticResource Text.Secondary}"
+                                   Text="{Binding Source={x:Static services:I18n.Instance}, Path=[TestModeHint], Mode=OneWay}"/>
+                    </StackPanel>
+                </CheckBox>
+            </StackPanel>
+
+            <!-- 3 · Videos -->
+            <StackPanel x:Name="Step3" Visibility="Collapsed" h:Motion.Entrance="Rise">
+                <TextBlock Style="{StaticResource Text.H1}" Text="{Binding Source={x:Static services:I18n.Instance}, Path=[Ob3Title], Mode=OneWay}"/>
+                <TextBlock Style="{StaticResource Text.Secondary}" FontSize="13.5" Margin="0,10,0,18"
+                           Text="{Binding Source={x:Static services:I18n.Instance}, Path=[Ob3Text], Mode=OneWay}"/>
+                <Grid Margin="0,0,0,12">
+                    <TextBlock Style="{StaticResource Text.Body}" FontWeight="SemiBold" VerticalAlignment="Center"
+                               Text="{Binding Source={x:Static services:I18n.Instance}, Path=[DlEngineLabel], Mode=OneWay}"/>
+                    <ComboBox x:Name="DownloaderCombo" Width="330" HorizontalAlignment="Right" SelectionChanged="Downloader_Changed"/>
+                </Grid>
+                <TextBlock x:Name="DownloaderHint" Style="{StaticResource Text.Secondary}" Margin="0,0,0,14"/>
+                <Grid Margin="0,0,0,14">
+                    <TextBlock Style="{StaticResource Text.Body}" FontWeight="SemiBold" VerticalAlignment="Center"
+                               Text="{Binding Source={x:Static services:I18n.Instance}, Path=[DlDestLabel], Mode=OneWay}"/>
+                    <Border Style="{StaticResource SegmentTrack}" HorizontalAlignment="Right">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="DestSameRadio" Style="{StaticResource SegmentRadio}"
+                                         Content="{Binding Source={x:Static services:I18n.Instance}, Path=[DlDestSame], Mode=OneWay}"/>
+                            <RadioButton x:Name="DestSubRadio" Style="{StaticResource SegmentRadio}"
+                                         Content="{Binding Source={x:Static services:I18n.Instance}, Path=[DlDestSub], Mode=OneWay}"/>
+                            <RadioButton x:Name="DestCustomRadio" Style="{StaticResource SegmentRadio}"
+                                         Content="{Binding Source={x:Static services:I18n.Instance}, Path=[DlDestCustom], Mode=OneWay}"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Border CornerRadius="8" Padding="14,11" Background="{DynamicResource Brush.WarningSoft}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Text.Icon}" Text="&#xE7BA;" FontSize="14" Margin="0,1,10,0"
+                                   VerticalAlignment="Top" Foreground="{DynamicResource Brush.Warning}"/>
+                        <TextBlock Style="{StaticResource Text.Secondary}" MaxWidth="520"
+                                   Text="{Binding Source={x:Static services:I18n.Instance}, Path=[ObLegal], Mode=OneWay}"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- 4 · Start -->
+            <StackPanel x:Name="Step4" Visibility="Collapsed" h:Motion.Entrance="Rise">
+                <TextBlock Style="{StaticResource Text.H1}" Text="{Binding Source={x:Static services:I18n.Instance}, Path=[Ob4Title], Mode=OneWay}"/>
+                <TextBlock Style="{StaticResource Text.Secondary}" FontSize="13.5" Margin="0,10,0,24"
+                           Text="{Binding Source={x:Static services:I18n.Instance}, Path=[Ob4Text], Mode=OneWay}"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource Button.Large}" Tag="&#xE8E5;" Click="LoadTxt_Click"
+                            Content="{Binding Source={x:Static services:I18n.Instance}, Path=[LoadTxt], Mode=OneWay}"/>
+                    <Button Margin="8,0,0,0" MinHeight="42" Tag="&#xE8B7;" Click="FromFolder_Click"
+                            Content="{Binding Source={x:Static services:I18n.Instance}, Path=[CreateTxt], Mode=OneWay}"/>
+                </StackPanel>
+                <TextBlock Style="{StaticResource Text.Secondary}" Margin="0,22,0,0"
+                           Text="{Binding Source={x:Static services:I18n.Instance}, Path=[ObAgain], Mode=OneWay}"/>
+            </StackPanel>
+
+            <!-- Footer -->
+            <Grid Grid.Row="1">
+                <Button x:Name="SkipButton" Style="{StaticResource Button.Ghost}" HorizontalAlignment="Left" Click="Finish_Click"
+                        Content="{Binding Source={x:Static services:I18n.Instance}, Path=[ObSkip], Mode=OneWay}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="BackButton" Style="{StaticResource Button.Ghost}" Tag="&#xE72B;" Margin="0,0,8,0" Click="Back_Click"
+                            Content="{Binding Source={x:Static services:I18n.Instance}, Path=[ObBack], Mode=OneWay}"/>
+                    <Button x:Name="NextButton" Style="{StaticResource Button.Primary}" MinWidth="110" Click="Next_Click"
+                            Content="{Binding Source={x:Static services:I18n.Instance}, Path=[ObNext], Mode=OneWay}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

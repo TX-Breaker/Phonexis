@@ -1,0 +1,21 @@
+<Window x:Class="Phonexis.Views.EditQueryDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:services="clr-namespace:Phonexis.Services"
+        Style="{StaticResource Window.Dialog}"
+        WindowStartupLocation="CenterOwner"
+        Title="{Binding Source={x:Static services:I18n.Instance}, Path=[EditQueryTitle], Mode=OneWay}"
+        Width="520" SizeToContent="Height" ResizeMode="NoResize">
+    <StackPanel Margin="24,2,24,22">
+        <TextBlock Style="{StaticResource Text.Label}" Margin="0,0,0,8"
+                   Text="{Binding Source={x:Static services:I18n.Instance}, Path=[EditQueryLabel], Mode=OneWay}"/>
+        <TextBox x:Name="QueryBox" FontSize="15" MinHeight="42"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Style="{StaticResource Button.Ghost}" IsCancel="True" MinWidth="90" Margin="0,0,8,0"
+                    Content="{Binding Source={x:Static services:I18n.Instance}, Path=[Cancel], Mode=OneWay}"/>
+            <Button Style="{StaticResource Button.Primary}" Tag="&#xE721;"
+                    Content="{Binding Source={x:Static services:I18n.Instance}, Path=[Ok], Mode=OneWay}"
+                    IsDefault="True" MinWidth="90" Click="Ok_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

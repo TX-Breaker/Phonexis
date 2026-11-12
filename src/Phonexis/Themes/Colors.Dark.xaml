@@ -1,0 +1,62 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Phonexis V3 · "Obi" — dark jacket. Same keys as Colors.Light.xaml. -->
+
+    <!-- Obi rail -->
+    <SolidColorBrush x:Key="Brush.Obi" Color="#3E2160"/>
+    <SolidColorBrush x:Key="Brush.ObiFill" Color="#6C44A3"/>
+    <SolidColorBrush x:Key="Brush.ObiEdge" Color="#D9C2F7"/>
+    <SolidColorBrush x:Key="Brush.ObiInk" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="Brush.ObiInkMuted" Color="#E4D6F6"/>
+    <SolidColorBrush x:Key="Brush.ObiHover" Color="#24FFFFFF"/>
+    <SolidColorBrush x:Key="Brush.ObiPressed" Color="#38FFFFFF"/>
+
+    <!-- Brand accent, lifted for dark-surface contrast -->
+    <Color x:Key="BrandColor">#A77BE0</Color>
+    <SolidColorBrush x:Key="Brush.Brand" Color="#A77BE0"/>
+    <SolidColorBrush x:Key="Brush.BrandHover" Color="#B790EA"/>
+    <SolidColorBrush x:Key="Brush.BrandPressed" Color="#9466D3"/>
+    <SolidColorBrush x:Key="Brush.BrandSoft" Color="#2A2139"/>
+    <SolidColorBrush x:Key="Brush.BrandSoftBorder" Color="#46365E"/>
+    <SolidColorBrush x:Key="Brush.BrandText" Color="#C4A3F0"/>
+    <SolidColorBrush x:Key="Brush.OnBrand" Color="#150E1E"/>
+
+    <!-- Jacket -->
+    <SolidColorBrush x:Key="Brush.WindowBg" Color="#141218"/>
+    <SolidColorBrush x:Key="Brush.Panel" Color="#0F0D13"/>
+    <SolidColorBrush x:Key="Brush.Surface" Color="#1C1922"/>
+    <SolidColorBrush x:Key="Brush.SurfaceAlt" Color="#24212B"/>
+    <SolidColorBrush x:Key="Brush.SurfaceHover" Color="#2A2632"/>
+    <SolidColorBrush x:Key="Brush.Hover" Color="#12FFFFFF"/>
+    <SolidColorBrush x:Key="Brush.Pressed" Color="#1FFFFFFF"/>
+    <SolidColorBrush x:Key="Brush.Border" Color="#2B2733"/>
+    <SolidColorBrush x:Key="Brush.BorderStrong" Color="#433D4F"/>
+
+    <!-- Ink -->
+    <SolidColorBrush x:Key="Brush.Text" Color="#F1EEF6"/>
+    <SolidColorBrush x:Key="Brush.TextSecondary" Color="#ABA5B7"/>
+    <SolidColorBrush x:Key="Brush.TextTertiary" Color="#857F92"/>
+    <SolidColorBrush x:Key="Brush.TextDisabled" Color="#5D5868"/>
+
+    <!-- State -->
+    <SolidColorBrush x:Key="Brush.Success" Color="#6CC48A"/>
+    <SolidColorBrush x:Key="Brush.SuccessSoft" Color="#192B20"/>
+    <SolidColorBrush x:Key="Brush.Warning" Color="#E6A855"/>
+    <SolidColorBrush x:Key="Brush.WarningSoft" Color="#33281A"/>
+    <SolidColorBrush x:Key="Brush.Danger" Color="#F07A6E"/>
+    <SolidColorBrush x:Key="Brush.DangerSoft" Color="#3A1E1C"/>
+    <SolidColorBrush x:Key="Brush.Info" Color="#7AA7F0"/>
+    <SolidColorBrush x:Key="Brush.InfoSoft" Color="#1B2638"/>
+
+    <!-- Window chrome -->
+    <SolidColorBrush x:Key="Brush.CloseHover" Color="#C42B1C"/>
+
+    <!-- Media and loading -->
+    <SolidColorBrush x:Key="Brush.ThumbnailBg" Color="#26222E"/>
+    <SolidColorBrush x:Key="Brush.Scrim" Color="#D9000000"/>
+    <SolidColorBrush x:Key="Brush.Skeleton" Color="#24212B"/>
+    <Color x:Key="Color.Shimmer">#1CFFFFFF</Color>
+    <Color x:Key="Color.Shadow">#000000</Color>
+    <SolidColorBrush x:Key="Brush.DropOverlay" Color="#E63E2160"/>
+</ResourceDictionary>

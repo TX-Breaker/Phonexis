@@ -1,0 +1,29 @@
+<Application x:Class="Phonexis.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:helpers="clr-namespace:Phonexis.Helpers"
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Index 0 is swapped at runtime by ThemeService -->
+                <ResourceDictionary Source="Themes/Colors.Light.xaml"/>
+                <ResourceDictionary Source="Themes/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <helpers:BoolToVisibilityConverter x:Key="BoolToVis"/>
+            <helpers:BoolToVisibilityConverter x:Key="InvBoolToVis" Invert="True"/>
+            <helpers:NullToVisibilityConverter x:Key="NullToVis"/>
+            <helpers:NullToVisibilityConverter x:Key="NotNullToVis" Invert="False"/>
+            <helpers:NullToVisibilityConverter x:Key="NullToVisInverted" Invert="True"/>
+            <helpers:UrlToImageConverter x:Key="UrlToImage"/>
+            <helpers:SongStatusToBrushConverter x:Key="StatusToBrush"/>
+            <helpers:SourceToBrushConverter x:Key="SourceToBrush"/>
+            <helpers:SourceToSoftBrushConverter x:Key="SourceToSoftBrush"/>
+            <helpers:DifferentToVisibilityConverter x:Key="DifferentToVis"/>
+            <helpers:ShortcutNumberConverter x:Key="ShortcutNumber"/>
+            <helpers:CountToVisibilityConverter x:Key="CountToVis"/>
+            <helpers:RetryLabelConverter x:Key="RetryLabel"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

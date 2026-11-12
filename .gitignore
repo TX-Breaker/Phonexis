@@ -1,0 +1,64 @@
+# ---- Build output ----
+bin/
+obj/
+dist/
+publish/
+TestResults/
+*.binlog
+
+# ---- IDE ----
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.rsuser
+
+# ---- OS ----
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ---- Logs and local data ----
+*.log
+*.db
+*.db-shm
+*.db-wal
+*.tmp
+
+# ---- Secrets and personal data (never published) ----
+keys.bin
+api_keys.txt
+*.pfx
+*.snk
+.env
+.env.*
+session.json
+settings.json
+*.phonexis
+*.crawljob
+
+# ---- Local AI / tooling state (never published) ----
+.ai_state.md
+.claude/
+.beads/
+.dolt/
+.beads-credential-key
+*.gate.lock*
+
+# Impeccable design tooling: keep design.json and surfaces/, drop runtime folders and captures
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/questions/
+.impeccable/build/
+.impeccable/live/
+.impeccable/config.local.json
+
+# Publishing instructions for the release agent (local only)
+HANDOFF-GITHUB.md
+
+# Beads / Dolt files (added by bd init)
+.beads/proxieddb/
+
+# Promo renders (brag): keep local, publish only docs/media
+brag-output*/

@@ -1,0 +1,136 @@
+<Window x:Class="Phonexis.Views.ArchiveDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:services="clr-namespace:Phonexis.Services"
+        xmlns:dl="clr-namespace:Phonexis.Services.Downloads"
+        xmlns:h="clr-namespace:Phonexis.Helpers"
+        Style="{StaticResource Window.Dialog}"
+        WindowStartupLocation="CenterOwner"
+        Title="{Binding Source={x:Static services:I18n.Instance}, Path=[ArchTitle], Mode=OneWay}"
+        Width="900" Height="640" MinWidth="720" MinHeight="480">
+    <Grid Margin="24,0,24,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Style="{StaticResource Text.Secondary}" Margin="0,0,0,16"
+                   Text="{Binding Source={x:Static services:I18n.Instance}, Path=[ArchHint], Mode=OneWay}"/>
+
+        <!-- Folder the other app downloaded into -->
+        <Grid Grid.Row="1" Margin="0,0,0,14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Style="{StaticResource Card}" Padding="12,0" MinHeight="36">
+                <Grid VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Style="{StaticResource Text.Icon}" Text="&#xE896;" FontSize="13" Margin="0,1,9,0"
+                               Foreground="{DynamicResource Brush.TextTertiary}"/>
+                    <TextBlock x:Name="FolderText" Grid.Column="1" Style="{StaticResource Text.Secondary}"
+                               TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+                </Grid>
+            </Border>
+            <Button Grid.Column="1" Margin="8,0,0,0" Click="Browse_Click"
+                    Content="{Binding Source={x:Static services:I18n.Instance}, Path=[SelectFolder], Mode=OneWay}"/>
+            <CheckBox x:Name="SubfoldersCheck" Grid.Column="2" Margin="14,0,0,0" VerticalAlignment="Center"
+                      Content="{Binding Source={x:Static services:I18n.Instance}, Path=[IncludeSubfolders], Mode=OneWay}"/>
+            <Button Grid.Column="3" Style="{StaticResource Button.Primary}" Margin="14,0,0,0" Tag="&#xE721;"
+                    Click="Analyze_Click"
+                    Content="{Binding Source={x:Static services:I18n.Instance}, Path=[ArchAnalyze], Mode=OneWay}"/>
+        </Grid>
+
+        <!-- Proposed moves -->
+        <Border Grid.Row="2" Style="{StaticResource Card}">
+            <Grid>
+                <TextBlock x:Name="EmptyText" Style="{StaticResource Text.Secondary}" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" TextAlignment="Center" Margin="40"
+                           Text="{Binding Source={x:Static services:I18n.Instance}, Path=[ArchEmpty], Mode=OneWay}"/>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl x:Name="MatchesList" Margin="6">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate DataType="{x:Type dl:ArchiveMatch}">
+                                <StackPanel h:Motion.Entrance="Rise" h:Motion.Stagger="True">
+                                    <Grid Margin="8,9">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="230"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <CheckBox x:Name="inc" IsChecked="{Binding Include}" VerticalAlignment="Top" Margin="0,1,0,0"/>
+                                        <TextBlock x:Name="song" Grid.Column="1" Text="{Binding SongLabel}" FontSize="13" FontWeight="SemiBold"
+                                                   Foreground="{DynamicResource Brush.Text}" TextTrimming="CharacterEllipsis"
+                                                   Margin="0,0,14,0" ToolTip="{Binding SongLabel}"/>
+                                        <StackPanel Grid.Column="2">
+                                            <TextBlock Text="{Binding SourceName}" FontSize="12" TextTrimming="CharacterEllipsis"
+                                                       Foreground="{DynamicResource Brush.TextSecondary}" ToolTip="{Binding SourceFile}"/>
+                                            <StackPanel x:Name="target" Orientation="Horizontal" Margin="0,3,0,0">
+                                                <TextBlock Style="{StaticResource Text.Icon}" Text="&#xE72A;" FontSize="11" Margin="0,1,7,0"
+                                                           Foreground="{DynamicResource Brush.BrandText}"/>
+                                                <TextBlock Text="{Binding TargetName}" FontSize="12.5" FontWeight="SemiBold"
+                                                           Foreground="{DynamicResource Brush.Text}" ToolTip="{Binding TargetPath}"/>
+                                                <TextBlock Text="{Binding TargetFolder}" FontSize="11.5" Margin="8,1,0,0"
+                                                           Foreground="{DynamicResource Brush.TextTertiary}" TextTrimming="CharacterEllipsis"
+                                                           MaxWidth="320"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <Border x:Name="chip" Grid.Column="3" Style="{StaticResource Badge}" Margin="12,0,0,0"
+                                                VerticalAlignment="Top" Background="{DynamicResource Brush.BrandSoft}">
+                                            <TextBlock x:Name="chipText" FontFamily="{StaticResource Font.Data}" FontSize="10.5" FontWeight="Bold"
+                                                       Foreground="{DynamicResource Brush.BrandText}"
+                                                       Text="{Binding Source={x:Static services:I18n.Instance}, Path=[ArchById], Mode=OneWay}"/>
+                                        </Border>
+                                    </Grid>
+                                    <Border Style="{StaticResource Hairline}"/>
+                                </StackPanel>
+                                <DataTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding MatchedBy}" Value="title">
+                                        <Setter TargetName="chip" Property="Background" Value="{DynamicResource Brush.InfoSoft}"/>
+                                        <Setter TargetName="chipText" Property="Foreground" Value="{DynamicResource Brush.Info}"/>
+                                        <Setter TargetName="chipText" Property="Text"
+                                                Value="{Binding Source={x:Static services:I18n.Instance}, Path=[ArchByTitle], Mode=OneWay}"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding MatchedBy}" Value="none">
+                                        <Setter TargetName="chip" Property="Background" Value="{DynamicResource Brush.WarningSoft}"/>
+                                        <Setter TargetName="chipText" Property="Foreground" Value="{DynamicResource Brush.Warning}"/>
+                                        <Setter TargetName="chipText" Property="Text"
+                                                Value="{Binding Source={x:Static services:I18n.Instance}, Path=[ArchUnmatched], Mode=OneWay}"/>
+                                        <Setter TargetName="inc" Property="IsEnabled" Value="False"/>
+                                        <Setter TargetName="target" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="song" Property="Text" Value="—"/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+
+        <!-- Footer -->
+        <Grid Grid.Row="3" Margin="0,16,0,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock x:Name="SummaryText" Style="{StaticResource Text.Data}" VerticalAlignment="Center"/>
+                <Button x:Name="UndoButton" Style="{StaticResource Button.Link}" Margin="12,0,0,0" Tag="&#xE7A7;"
+                        Click="Undo_Click"
+                        Content="{Binding Source={x:Static services:I18n.Instance}, Path=[ArchUndo], Mode=OneWay}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource Button.Ghost}" IsCancel="True" MinWidth="90" Margin="0,0,8,0"
+                        Content="{Binding Source={x:Static services:I18n.Instance}, Path=[Close], Mode=OneWay}"/>
+                <Button x:Name="ExecuteButton" Style="{StaticResource Button.Primary}" Tag="&#xE8DE;" IsEnabled="False"
+                        Click="Execute_Click"
+                        Content="{Binding Source={x:Static services:I18n.Instance}, Path=[ArchExecute], Mode=OneWay}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

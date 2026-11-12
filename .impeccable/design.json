@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T00:28:27+01:00",
+  "title": "Design System: Phonexis",
+  "extensions": {
+    "colorMeta": {
+      "obi": {
+        "role": "primary",
+        "displayName": "MetaGroove Obi Purple",
+        "canonical": "#6B4092",
+        "tonalRamp": [
+          "#271D2F",
+          "#412E52",
+          "#5D3D7A",
+          "#7A4BA5",
+          "#966EBA",
+          "#B49BCA",
+          "#D2C5DD",
+          "#F2F0F5"
+        ]
+      },
+      "obi-fill": {
+        "role": "primary",
+        "displayName": "Risen Band",
+        "canonical": "#8659B4",
+        "tonalRamp": [
+          "#261D2F",
+          "#402E51",
+          "#5B3E79",
+          "#774CA4",
+          "#936FB9",
+          "#B29CC9",
+          "#D1C6DC",
+          "#F2F0F5"
+        ]
+      },
+      "obi-edge": {
+        "role": "primary",
+        "displayName": "Obi Edge",
+        "canonical": "#E9DCF7",
+        "tonalRamp": [
+          "#261735",
+          "#3F235D",
+          "#5A2B8D",
+          "#752FC1",
+          "#9257D1",
+          "#B18DD8",
+          "#D0BEE4",
+          "#F2EEF6"
+        ]
+      },
+      "brand": {
+        "role": "primary",
+        "displayName": "MetaGroove Obi Purple",
+        "canonical": "#6B4092",
+        "tonalRamp": [
+          "#150E1E",
+          "#2A2139",
+          "#4E2D6D",
+          "#5D3681",
+          "#6B4092",
+          "#A77BE0",
+          "#D6C4EA",
+          "#EDE5F6"
+        ]
+      },
+      "brand-soft": {
+        "role": "primary",
+        "displayName": "Wrapped Tint",
+        "canonical": "#EDE5F6",
+        "tonalRamp": [
+          "#261B32",
+          "#3E2956",
+          "#5A3682",
+          "#7540B0",
+          "#9164C3",
+          "#B196CF",
+          "#D0C3E0",
+          "#F2EFF5"
+        ]
+      },
+      "brand-text": {
+        "role": "primary",
+        "displayName": "Catalog Purple",
+        "canonical": "#5E3685",
+        "tonalRamp": [
+          "#261C30",
+          "#402C53",
+          "#5C3B7D",
+          "#7847A9",
+          "#946BBD",
+          "#B399CC",
+          "#D1C5DE",
+          "#F2F0F5"
+        ]
+      },
+      "obi-dark": {
+        "role": "primary",
+        "displayName": "Plum Obi",
+        "canonical": "#3E2160",
+        "tonalRamp": [
+          "#251B32",
+          "#3E2956",
+          "#593682",
+          "#733FB0",
+          "#9064C4",
+          "#B095D0",
+          "#D0C3E0",
+          "#F2EFF5"
+        ]
+      },
+      "obi-fill-dark": {
+        "role": "primary",
+        "displayName": "Dusk Band",
+        "canonical": "#6C44A3",
+        "tonalRamp": [
+          "#251D30",
+          "#3D2D53",
+          "#573C7C",
+          "#7048A8",
+          "#8E6CBC",
+          "#AF9ACB",
+          "#CFC5DD",
+          "#F2F0F5"
+        ]
+      },
+      "brand-dark": {
+        "role": "primary",
+        "displayName": "Lifted Lilac",
+        "canonical": "#A77BE0",
+        "tonalRamp": [
+          "#241835",
+          "#3C235C",
+          "#562C8C",
+          "#6F30C0",
+          "#8C57D0",
+          "#AE8ED7",
+          "#CFBFE4",
+          "#F2EEF6"
+        ]
+      },
+      "window-bg": {
+        "role": "neutral",
+        "displayName": "Jacket Paper",
+        "canonical": "#F5F4F8",
+        "tonalRamp": [
+          "#24212B",
+          "#3B354A",
+          "#534B6D",
+          "#6B5E92",
+          "#897EAA",
+          "#ACA5C0",
+          "#CECAD8",
+          "#F2F1F4"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Sleeve Shade",
+        "canonical": "#ECEAF1",
+        "tonalRamp": [
+          "#24222B",
+          "#3C3749",
+          "#554C6B",
+          "#6E618F",
+          "#8C80A7",
+          "#ADA7BE",
+          "#CFCBD7",
+          "#F2F1F4"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5C5C5C",
+          "#787878",
+          "#949494",
+          "#B2B2B2",
+          "#D1D1D1",
+          "#F2F2F2"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#E0DDE7",
+        "tonalRamp": [
+          "#25222A",
+          "#3D3848",
+          "#564E69",
+          "#70648C",
+          "#8D83A5",
+          "#AEA8BD",
+          "#CFCCD6",
+          "#F2F1F3"
+        ]
+      },
+      "border-strong": {
+        "role": "neutral",
+        "displayName": "Firm Hairline",
+        "canonical": "#C5BFD1",
+        "tonalRamp": [
+          "#25222A",
+          "#3D3847",
+          "#584F69",
+          "#72658B",
+          "#8F84A4",
+          "#AFA9BC",
+          "#CFCCD6",
+          "#F2F1F3"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#19151F",
+        "tonalRamp": [
+          "#25222B",
+          "#3E3749",
+          "#594D6B",
+          "#73628E",
+          "#9081A7",
+          "#B0A7BE",
+          "#D0CBD7",
+          "#F2F1F3"
+        ]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#5B5566",
+        "tonalRamp": [
+          "#262428",
+          "#3F3C44",
+          "#5A5563",
+          "#756D82",
+          "#918B9D",
+          "#B1ADB8",
+          "#D0CED4",
+          "#F2F2F3"
+        ]
+      },
+      "text-tertiary": {
+        "role": "neutral",
+        "displayName": "Pencil",
+        "canonical": "#7D7789",
+        "tonalRamp": [
+          "#262528",
+          "#3F3C43",
+          "#5A5661",
+          "#757080",
+          "#928D9B",
+          "#B1AEB7",
+          "#D0CFD3",
+          "#F2F2F3"
+        ]
+      },
+      "window-bg-dark": {
+        "role": "neutral",
+        "displayName": "Jacket Paper (dark)",
+        "canonical": "#141218",
+        "tonalRamp": [
+          "#25232A",
+          "#3E3946",
+          "#585167",
+          "#726788",
+          "#8F86A2",
+          "#B0AABB",
+          "#D0CDD5",
+          "#F2F1F3"
+        ]
+      },
+      "surface-dark": {
+        "role": "neutral",
+        "displayName": "Card (dark)",
+        "canonical": "#1C1922",
+        "tonalRamp": [
+          "#25232A",
+          "#3D3947",
+          "#585068",
+          "#72668A",
+          "#8F85A3",
+          "#AFA9BC",
+          "#D0CDD6",
+          "#F2F1F3"
+        ]
+      },
+      "success": {
+        "role": "status",
+        "displayName": "Success",
+        "canonical": "#2E7A48",
+        "tonalRamp": [
+          "#1C3123",
+          "#2B5539",
+          "#397F51",
+          "#43AC67",
+          "#68C086",
+          "#98CDAA",
+          "#C4DFCD",
+          "#EFF5F1"
+        ]
+      },
+      "warning": {
+        "role": "status",
+        "displayName": "Warning",
+        "canonical": "#9E5B00",
+        "tonalRamp": [
+          "#3E2A0F",
+          "#6E4712",
+          "#A9680E",
+          "#EC8904",
+          "#F6A332",
+          "#EEBC77",
+          "#EFD6B3",
+          "#F9F3EC"
+        ]
+      },
+      "danger": {
+        "role": "status",
+        "displayName": "Danger",
+        "canonical": "#BE3328",
+        "tonalRamp": [
+          "#361917",
+          "#5E2622",
+          "#8E3129",
+          "#C3372C",
+          "#D45E54",
+          "#D9918C",
+          "#E4C1BE",
+          "#F6EFEE"
+        ]
+      },
+      "info": {
+        "role": "status",
+        "displayName": "Info",
+        "canonical": "#2B5FB4",
+        "tonalRamp": [
+          "#182335",
+          "#23395C",
+          "#2C508C",
+          "#3167BF",
+          "#5885D0",
+          "#8EAAD7",
+          "#BFCDE3",
+          "#EEF1F6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Welcome and done titles only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The current song's query in the results header."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Queue title, card headings, empty-state headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text, buttons, inputs, menu items."
+      },
+      "body-secondary": {
+        "displayName": "Body Secondary",
+        "purpose": "Hints, channel names, file names, status line."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Bahnschrift filter and field labels, chips, the searching caption."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "Catalog numbers, views, dates, quota, save indicator, export URLs; tabular."
+      },
+      "data-strong": {
+        "displayName": "Data Strong",
+        "purpose": "The running time, right-aligned at the end of each result spec line."
+      },
+      "counter": {
+        "displayName": "Counter",
+        "purpose": "The processed count on the obi rail."
+      }
+    },
+    "shadows": [
+      {
+        "name": "primary-weight",
+        "value": "0 2px 10px rgba(42,26,61,0.16)",
+        "purpose": "Under primary buttons at rest; removed when disabled."
+      },
+      {
+        "name": "hover-lift",
+        "value": "0 4px 18px rgba(42,26,61,0.13)",
+        "purpose": "Hovered result card, paired with a 2px upward translate."
+      },
+      {
+        "name": "popup",
+        "value": "0 4px 18px rgba(0,0,0,0.16)",
+        "purpose": "ComboBox drop-downs."
+      },
+      {
+        "name": "segment-thumb",
+        "value": "0 1px 6px rgba(0,0,0,0.12)",
+        "purpose": "Checked segment in a segmented control."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-strong",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Entrances, press feedback, hover lift, switch knob."
+      },
+      {
+        "name": "ease-in-out-strong",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "On-screen movement: the obi rail fill."
+      },
+      {
+        "name": "fade",
+        "value": "180ms",
+        "purpose": "Fade entrances: state views, popups, tooltips, overlays."
+      },
+      {
+        "name": "rise",
+        "value": "opacity 220ms; translateY 10px to 0 over 260ms",
+        "purpose": "Cards, banners, welcome and complete blocks."
+      },
+      {
+        "name": "scale-in",
+        "value": "opacity 180ms; scale 0.97 to 1 over 220ms",
+        "purpose": "Dialogs."
+      },
+      {
+        "name": "stagger",
+        "value": "30ms per item, capped at 8 items",
+        "purpose": "Result list and export-preview list entrances."
+      },
+      {
+        "name": "press",
+        "value": "scale 0.97 over 100ms; release over 160ms",
+        "purpose": "Buttons, rail buttons, chips."
+      },
+      {
+        "name": "hover-overlay",
+        "value": "in 120ms; out 180ms",
+        "purpose": "Button and rail hover plates."
+      },
+      {
+        "name": "rail-fill",
+        "value": "420ms",
+        "purpose": "The obi fill rising on every pick."
+      },
+      {
+        "name": "shimmer",
+        "value": "1400ms linear, infinite",
+        "purpose": "Skeleton sweep while searching."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "SystemParameters.ClientAreaAnimation",
+        "purpose": "Every animation is skipped when Windows Show animations is off."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "window-min",
+        "value": "880px x 580px"
+      },
+      {
+        "name": "result-compact",
+        "value": "results column below 620px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one decisive action in a context: Select a result, Start, Resume, Export, OK.",
+      "html": "<button class=\"ds-btn-primary\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 8.5l3 3 7-7\"/></svg>Select</button>",
+      "css": ":root{--brand:#6B4092;--brand-hover:#5D3681;--brand-pressed:#4E2D6D;--brand-soft:#EDE5F6;--brand-soft-border:#D6C4EA;--brand-text:#5E3685;--on-brand:#fff;--obi:#6B4092;--obi-fill:#8659B4;--obi-edge:#E9DCF7;--obi-ink:#fff;--obi-ink-muted:#F3EBFC;--bg:#F5F4F8;--panel:#ECEAF1;--surface:#fff;--surface-alt:#EFEDF3;--hover:rgba(42,31,61,.06);--border:#E0DDE7;--border-strong:#C5BFD1;--text:#19151F;--text-2:#5B5566;--text-3:#7D7789;--warning:#9E5B00;--danger:#BE3328;--info:#2B5FB4;--info-soft:#E4ECF9}.ds-btn-primary{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:6px;font-size:13px;cursor:pointer;transition:background .12s,transform .1s cubic-bezier(.23,1,.32,1);font-family:'Segoe UI',sans-serif;background:var(--brand);color:var(--on-brand);border:none;font-weight:600;box-shadow:0 2px 10px rgba(42,26,61,.16)}.ds-btn-primary:hover{background:var(--brand-hover)}.ds-btn-primary:active{background:var(--brand-pressed);transform:scale(.97)}.ds-btn-primary:focus-visible{outline:2px solid var(--brand);outline-offset:3px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Default toolbar action: Back, Skip, Refresh, Load more.",
+      "html": "<button class=\"ds-btn-secondary\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M3 3l6 5-6 5zM12 3v10\"/></svg>Skip</button>",
+      "css": ":root{--brand:#6B4092;--brand-hover:#5D3681;--brand-pressed:#4E2D6D;--brand-soft:#EDE5F6;--brand-soft-border:#D6C4EA;--brand-text:#5E3685;--on-brand:#fff;--obi:#6B4092;--obi-fill:#8659B4;--obi-edge:#E9DCF7;--obi-ink:#fff;--obi-ink-muted:#F3EBFC;--bg:#F5F4F8;--panel:#ECEAF1;--surface:#fff;--surface-alt:#EFEDF3;--hover:rgba(42,31,61,.06);--border:#E0DDE7;--border-strong:#C5BFD1;--text:#19151F;--text-2:#5B5566;--text-3:#7D7789;--warning:#9E5B00;--danger:#BE3328;--info:#2B5FB4;--info-soft:#E4ECF9}.ds-btn-secondary{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:6px;font-size:13px;cursor:pointer;transition:background .12s,transform .1s cubic-bezier(.23,1,.32,1);font-family:'Segoe UI',sans-serif;background:var(--surface);color:var(--text);border:1px solid var(--border-strong)}.ds-btn-secondary:hover{background:#F1EFF4}.ds-btn-secondary:active{transform:scale(.97)}.ds-btn-secondary:focus-visible{outline:2px solid var(--brand);outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Dismiss, cancel, new session.",
+      "html": "<button class=\"ds-btn-ghost\">Dismiss</button>",
+      "css": ":root{--brand:#6B4092;--brand-hover:#5D3681;--brand-pressed:#4E2D6D;--brand-soft:#EDE5F6;--brand-soft-border:#D6C4EA;--brand-text:#5E3685;--on-brand:#fff;--obi:#6B4092;--obi-fill:#8659B4;--obi-edge:#E9DCF7;--obi-ink:#fff;--obi-ink-muted:#F3EBFC;--bg:#F5F4F8;--panel:#ECEAF1;--surface:#fff;--surface-alt:#EFEDF3;--hover:rgba(42,31,61,.06);--border:#E0DDE7;--border-strong:#C5BFD1;--text:#19151F;--text-2:#5B5566;--text-3:#7D7789;--warning:#9E5B00;--danger:#BE3328;--info:#2B5FB4;--info-soft:#E4ECF9}.ds-btn-ghost{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:6px;font-size:13px;cursor:pointer;transition:background .12s,transform .1s cubic-bezier(.23,1,.32,1);font-family:'Segoe UI',sans-serif;background:transparent;color:var(--text-2);border:1px solid transparent}.ds-btn-ghost:hover{background:var(--hover)}.ds-btn-ghost:active{transform:scale(.97)}.ds-btn-ghost:focus-visible{outline:2px solid var(--brand);outline-offset:3px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Single-line field with placeholder; brand outline and soft halo on keyboard focus.",
+      "html": "<input class=\"ds-input\" placeholder=\"Artist - Title\">",
+      "css": ":root{--brand:#6B4092;--brand-hover:#5D3681;--brand-pressed:#4E2D6D;--brand-soft:#EDE5F6;--brand-soft-border:#D6C4EA;--brand-text:#5E3685;--on-brand:#fff;--obi:#6B4092;--obi-fill:#8659B4;--obi-edge:#E9DCF7;--obi-ink:#fff;--obi-ink-muted:#F3EBFC;--bg:#F5F4F8;--panel:#ECEAF1;--surface:#fff;--surface-alt:#EFEDF3;--hover:rgba(42,31,61,.06);--border:#E0DDE7;--border-strong:#C5BFD1;--text:#19151F;--text-2:#5B5566;--text-3:#7D7789;--warning:#9E5B00;--danger:#BE3328;--info:#2B5FB4;--info-soft:#E4ECF9}.ds-input{height:36px;padding:0 10px;border-radius:6px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text);font-size:13px;font-family:'Segoe UI',sans-serif;outline:none}.ds-input::placeholder{color:var(--text-3)}.ds-input:hover{border-color:var(--text-3)}.ds-input:focus-visible{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft-border)}"
+    },
+    {
+      "name": "Obi Rail",
+      "kind": "nav",
+      "refersTo": "button-rail",
+      "description": "The 64px purple band: rail actions, vertical spine, counter, and the progress fill rising from the bottom (hover the rail to see it rise).",
+      "html": "<nav class=\"ds-rail\"><div class=\"ds-rail-fill\"></div><button class=\"ds-rail-btn\" aria-label=\"Settings\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\"><circle cx=\"8\" cy=\"8\" r=\"2.5\"/><path d=\"M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3\"/></svg></button><span class=\"ds-rail-spine\">PHONEXIS</span><div class=\"ds-rail-count\"><b>37</b><i></i><span>148</span></div></nav>",
+      "css": ":root{--brand:#6B4092;--brand-hover:#5D3681;--brand-pressed:#4E2D6D;--brand-soft:#EDE5F6;--brand-soft-border:#D6C4EA;--brand-text:#5E3685;--on-brand:#fff;--obi:#6B4092;--obi-fill:#8659B4;--obi-edge:#E9DCF7;--obi-ink:#fff;--obi-ink-muted:#F3EBFC;--bg:#F5F4F8;--panel:#ECEAF1;--surface:#fff;--surface-alt:#EFEDF3;--hover:rgba(42,31,61,.06);--border:#E0DDE7;--border-strong:#C5BFD1;--text:#19151F;--text-2:#5B5566;--text-3:#7D7789;--warning:#9E5B00;--danger:#BE3328;--info:#2B5FB4;--info-soft:#E4ECF9}.ds-rail{position:relative;overflow:hidden;width:64px;height:300px;background:var(--obi);display:flex;flex-direction:column;align-items:center;gap:14px;padding:14px 0;box-sizing:border-box}.ds-rail-fill{position:absolute;left:0;right:0;bottom:0;height:25%;background:var(--obi-fill);border-top:2px solid var(--obi-edge);transition:height .42s cubic-bezier(.77,0,.175,1)}.ds-rail:hover .ds-rail-fill{height:40%}.ds-rail>*:not(.ds-rail-fill){position:relative}.ds-rail-btn{width:44px;height:44px;border:none;border-radius:8px;background:transparent;color:var(--obi-ink-muted);cursor:pointer;display:grid;place-items:center;transition:background .12s}.ds-rail-btn:hover{background:rgba(255,255,255,.2);color:var(--obi-ink)}.ds-rail-btn:active{transform:scale(.97)}.ds-rail-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}.ds-rail-spine{writing-mode:vertical-rl;transform:rotate(180deg);flex:1;text-align:center;font-family:Bahnschrift,sans-serif;font-weight:600;font-size:13px;color:var(--obi-ink-muted)}.ds-rail-count{display:flex;flex-direction:column;align-items:center;color:var(--obi-ink);font-family:Bahnschrift,sans-serif;font-variant-numeric:tabular-nums}.ds-rail-count b{font-size:17px}.ds-rail-count i{width:18px;height:1.5px;background:var(--obi-ink);margin:3px 0}.ds-rail-count span{font-size:12px}"
+    },
+    {
+      "name": "Queue Row",
+      "kind": "custom",
+      "refersTo": "queue-row-current",
+      "description": "Catalog-numbered queue rows: picked (brand check), current (wrapped in brand-soft, pending ring), skipped (warning glyph).",
+      "html": "<div class=\"ds-queue\"><button class=\"ds-qrow\"><span class=\"ds-qnum\">011</span><span class=\"ds-qtxt\">Moodymann - Shades of Jae<small>Shades Of Jae (Official)</small></span><span class=\"ds-qdone\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 8.5l3 3 7-7\"/></svg></span></button><button class=\"ds-qrow is-current\"><span class=\"ds-qnum\">012</span><span class=\"ds-qtxt\">Theo Parrish - Summertime Is Here</span><span class=\"ds-qpend\"></span></button><button class=\"ds-qrow is-muted\"><span class=\"ds-qnum\">013</span><span class=\"ds-qtxt\">Unknown white label</span><span class=\"ds-qskip\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M3 3l6 5-6 5zM12 3v10\"/></svg></span></button></div>",
+      "css": ":root{--brand:#6B4092;--brand-hover:#5D3681;--brand-pressed:#4E2D6D;--brand-soft:#EDE5F6;--brand-soft-border:#D6C4EA;--brand-text:#5E3685;--on-brand:#fff;--obi:#6B4092;--obi-fill:#8659B4;--obi-edge:#E9DCF7;--obi-ink:#fff;--obi-ink-muted:#F3EBFC;--bg:#F5F4F8;--panel:#ECEAF1;--surface:#fff;--surface-alt:#EFEDF3;--hover:rgba(42,31,61,.06);--border:#E0DDE7;--border-strong:#C5BFD1;--text:#19151F;--text-2:#5B5566;--text-3:#7D7789;--warning:#9E5B00;--danger:#BE3328;--info:#2B5FB4;--info-soft:#E4ECF9}.ds-queue{width:280px;background:var(--panel);padding:6px}.ds-qrow{display:grid;grid-template-columns:34px 1fr auto;align-items:center;width:100%;padding:8px 12px 8px 10px;margin:1px 0;border:none;border-radius:6px;background:transparent;text-align:left;cursor:pointer;font-family:'Segoe UI',sans-serif;transition:background .1s}.ds-qrow:hover{background:var(--hover)}.ds-qrow:focus-visible{outline:2px solid var(--brand);outline-offset:1px}.ds-qrow.is-current{background:var(--brand-soft)}.ds-qnum{font-family:Bahnschrift,sans-serif;font-variant-numeric:tabular-nums;font-size:12px;color:var(--text-3);align-self:start;margin-top:1px}.is-current .ds-qnum{color:var(--brand-text);font-weight:700}.ds-qtxt{font-size:13px;color:var(--text);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.is-current .ds-qtxt{font-weight:600}.is-muted .ds-qtxt{color:var(--text-2)}.ds-qtxt small{display:block;font-size:11.5px;color:var(--text-2)}.ds-qdone{width:18px;height:18px;border-radius:9px;background:var(--brand);color:#fff;display:grid;place-items:center;margin-left:10px}.ds-qdone svg{width:9px;height:9px}.ds-qskip{color:var(--warning);margin-left:13px;display:grid;place-items:center}.ds-qpend{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--border-strong);margin:0 5px 0 15px}"
+    },
+    {
+      "name": "Result Card",
+      "kind": "card",
+      "refersTo": "result-card",
+      "description": "One YouTube result at the fixed comparison scale: 176x99 thumbnail, title, channel, fixed-column spec line with the running time right-aligned. Lifts on hover.",
+      "html": "<article class=\"ds-result\"><div class=\"ds-thumb\"></div><div class=\"ds-rbody\"><h3>Theo Parrish - Summertime Is Here (Original Mix)</h3><p>Sound Signature</p><div class=\"ds-spec\"><span><svg width=\"12\" height=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><path d=\"M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z\"/><circle cx=\"8\" cy=\"8\" r=\"2\"/></svg>1.2M</span><span>2014</span><em>API</em><b>9:48</b></div></div><button class=\"ds-rsel\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 8.5l3 3 7-7\"/></svg>Select</button></article>",
+      "css": ":root{--brand:#6B4092;--brand-hover:#5D3681;--brand-pressed:#4E2D6D;--brand-soft:#EDE5F6;--brand-soft-border:#D6C4EA;--brand-text:#5E3685;--on-brand:#fff;--obi:#6B4092;--obi-fill:#8659B4;--obi-edge:#E9DCF7;--obi-ink:#fff;--obi-ink-muted:#F3EBFC;--bg:#F5F4F8;--panel:#ECEAF1;--surface:#fff;--surface-alt:#EFEDF3;--hover:rgba(42,31,61,.06);--border:#E0DDE7;--border-strong:#C5BFD1;--text:#19151F;--text-2:#5B5566;--text-3:#7D7789;--warning:#9E5B00;--danger:#BE3328;--info:#2B5FB4;--info-soft:#E4ECF9}.ds-result{display:grid;grid-template-columns:176px 1fr auto;gap:16px;align-items:start;padding:12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;transition:transform .18s cubic-bezier(.23,1,.32,1),box-shadow .18s,border-color .18s;font-family:'Segoe UI',sans-serif;}.ds-result:hover{transform:translateY(-2px);box-shadow:0 4px 18px rgba(42,26,61,.13);border-color:var(--brand-soft-border)}.ds-thumb{width:176px;height:99px;border-radius:6px;background:#E1DDE8}.ds-rbody h3{margin:1px 0 0;font-size:14px;font-weight:600;line-height:19px;color:var(--text)}.ds-rbody p{margin:4px 0 0;font-size:12.5px;color:var(--text-2)}.ds-spec{display:grid;grid-template-columns:78px 80px auto 1fr;align-items:center;margin-top:7px;font-family:Bahnschrift,'Segoe UI',sans-serif;font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--text-2)}.ds-spec span:first-child{display:flex;gap:5px;align-items:center;color:var(--text)}.ds-spec em{font-style:normal;font-size:10.5px;font-weight:700;padding:1px 6px 2px;border-radius:4px;background:var(--info-soft);color:var(--info)}.ds-spec b{justify-self:end;font-size:14px;font-weight:600;color:var(--text)}.ds-rsel{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:6px;font-size:13px;cursor:pointer;transition:background .12s,transform .1s cubic-bezier(.23,1,.32,1);font-family:'Segoe UI',sans-serif;align-self:center;min-width:112px;justify-content:center;background:var(--brand);color:#fff;border:none;font-weight:600}.ds-rsel:hover{background:var(--brand-hover)}.ds-rsel:active{transform:scale(.97)}.ds-rsel:focus-visible{outline:2px solid var(--brand);outline-offset:3px}"
+    },
+    {
+      "name": "Filter Pill",
+      "kind": "chip",
+      "refersTo": "filter-pill-active",
+      "description": "Filter ComboBox: Bahnschrift label + value; neutral at Any, brand-soft when a filter is set.",
+      "html": "<div class=\"ds-filters\"><button class=\"ds-pill\"><span>Duration</span>Any</button><button class=\"ds-pill is-set\"><span>Views</span>High</button></div>",
+      "css": ":root{--brand:#6B4092;--brand-hover:#5D3681;--brand-pressed:#4E2D6D;--brand-soft:#EDE5F6;--brand-soft-border:#D6C4EA;--brand-text:#5E3685;--on-brand:#fff;--obi:#6B4092;--obi-fill:#8659B4;--obi-edge:#E9DCF7;--obi-ink:#fff;--obi-ink-muted:#F3EBFC;--bg:#F5F4F8;--panel:#ECEAF1;--surface:#fff;--surface-alt:#EFEDF3;--hover:rgba(42,31,61,.06);--border:#E0DDE7;--border-strong:#C5BFD1;--text:#19151F;--text-2:#5B5566;--text-3:#7D7789;--warning:#9E5B00;--danger:#BE3328;--info:#2B5FB4;--info-soft:#E4ECF9}.ds-filters{display:flex;gap:8px}.ds-pill{height:32px;padding:0 32px 0 12px;border-radius:6px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text);font-family:'Segoe UI',sans-serif;font-size:13px;cursor:pointer;position:relative;display:inline-flex;align-items:center;gap:7px}.ds-pill::after{content:'';position:absolute;right:12px;top:11px;width:5px;height:5px;border-right:1.4px solid var(--text-2);border-bottom:1.4px solid var(--text-2);transform:rotate(45deg)}.ds-pill span{font-family:Bahnschrift,sans-serif;font-weight:600;font-size:12px;color:var(--text-2)}.ds-pill:hover{border-color:var(--text-3)}.ds-pill:focus-visible{outline:2px solid var(--brand);outline-offset:3px}.ds-pill.is-set{background:var(--brand-soft);border-color:var(--brand-soft-border);color:var(--brand-text);font-weight:600}"
+    },
+    {
+      "name": "Complete Stat Band",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Horizontal obi summarising a finished list: wordmark tab in the risen band, then picked / skipped / no-result counts.",
+      "html": "<div class=\"ds-band\"><span class=\"ds-band-tab\">PHONEXIS</span><span><svg width=\"13\" height=\"13\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 8.5l3 3 7-7\"/></svg>131 picked</span><span><svg width=\"12\" height=\"12\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M3 3l6 5-6 5zM12 3v10\"/></svg>12 skipped</span><span><svg width=\"11\" height=\"11\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M3 3l10 10M13 3L3 13\"/></svg>5 no results</span><span class=\"ds-band-mute\">148 songs</span></div>",
+      "css": ":root{--brand:#6B4092;--brand-hover:#5D3681;--brand-pressed:#4E2D6D;--brand-soft:#EDE5F6;--brand-soft-border:#D6C4EA;--brand-text:#5E3685;--on-brand:#fff;--obi:#6B4092;--obi-fill:#8659B4;--obi-edge:#E9DCF7;--obi-ink:#fff;--obi-ink-muted:#F3EBFC;--bg:#F5F4F8;--panel:#ECEAF1;--surface:#fff;--surface-alt:#EFEDF3;--hover:rgba(42,31,61,.06);--border:#E0DDE7;--border-strong:#C5BFD1;--text:#19151F;--text-2:#5B5566;--text-3:#7D7789;--warning:#9E5B00;--danger:#BE3328;--info:#2B5FB4;--info-soft:#E4ECF9}.ds-band{display:flex;align-items:stretch;flex-wrap:wrap;border-radius:8px;background:var(--obi);color:var(--obi-ink);font-family:Bahnschrift,sans-serif;font-variant-numeric:tabular-nums;font-size:15px;font-weight:600;overflow:hidden}.ds-band>span{display:inline-flex;align-items:center;gap:8px;padding:14px 13px}.ds-band>span.ds-band-tab{background:var(--obi-fill);padding:14px 16px;font-size:13px;font-weight:700}.ds-band-mute{color:var(--obi-ink-muted);font-weight:400}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Obi Strip",
+    "overview": "The window is a record jacket and its left edge wears an obi, the paper band on Japanese import LPs that says what the record is and how far into the series you are. A full-height MetaGroove purple rail carries the logo, the file actions, a vertical PHONEXIS spine and the processed / total counter; behind them a lighter band rises from the bottom as songs are processed. Everything else is the jacket: cool, violet-tinted neutrals that stay quiet so thumbnails, durations and channels can be compared without competition.\n\nThe voice splits by job. Words (song queries, video titles, channels, body copy) are Segoe UI. Anything a DJ compares or counts (catalog numbers 001, 002 …, durations, views, dates, quota units, source badges, small labels) is Bahnschrift with tabular figures, set like the fine print of an obi or the tracklist on a J-card. Icons are Segoe MDL2 Assets, the platform's own set. Density is that of a desktop work tool: 13px body, 34px controls, a 64px rail, a 300px queue and a main column with 32px gutters.\n\nThe system refuses the category default of grey sidebar, white cards and one purple button. The purple is not an accent sprinkled on a neutral app; it is a physical object, the band, and the other uses of brand colour (primary action, current row, picked mark, focus) all read as belonging to it.",
+    "keyCharacteristics": [
+      "A committed purple obi rail at full window height that fills bottom-up with progress.",
+      "Catalog numbering (three-digit, tabular) as the identity of every song, in the queue, the header and the export list.",
+      "One fixed result scale: every thumbnail, title and spec line sits at the same size and baseline so five results compare directly.",
+      "Hairline borders, 6px controls, 8px cards; shadow only as a response (hover lift, primary button, popups).",
+      "Two themes with the same keys; dark lifts the brand to #A77BE0 for contrast and sinks the obi to a deeper plum.",
+      "Short, strong ease-out motion that switches off with Windows \"Show animations\"."
+    ],
+    "rules": [
+      {
+        "name": "The Band Is The Brand Rule",
+        "body": "Purple appears as the obi rail, its echoes (the empty sleeve on the welcome screen, the About dialog band, the complete-state stat band) and as marks that belong to it: primary action, current row, picked check, focus. It is never a decorative fill on neutral surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Distinct Marks Rule",
+        "body": "Picked, skipped and no-result must stay three different colours and three different shapes: a filled brand-purple circle with a white check (picked), a warning-hued skip glyph (skipped), a danger-hued cross (no results). Pending is an empty 8px ring in border-strong. Never collapse two of them into one hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Same Keys Rule",
+        "body": "Light and dark dictionaries define exactly the same keys. Code and converters reference keys (Brush.Brand, Brush.Warning …), never hex, so a theme switch is a dictionary swap.",
+        "section": "colors"
+      },
+      {
+        "name": "The Numbers Wear DIN Rule",
+        "body": "Every number a user compares or counts is Bahnschrift with tabular numerals, so columns align across rows. Words never use Bahnschrift; numbers never use Segoe UI.",
+        "section": "typography"
+      },
+      {
+        "name": "The Catalog Number Rule",
+        "body": "A song's identity is its three-digit catalog number (001, 012, 148). It leads every queue row, the results header (\"012 / 148\") and every export-preview row, in the same 34–44px leading column.",
+        "section": "typography"
+      },
+      {
+        "name": "The Fixed Scale Rule",
+        "body": "Every result in a list renders at the same thumbnail size and the same spec-line columns (views with eye icon, date, source badge, running time right-aligned). Nothing in a result row resizes to its content.",
+        "section": "layout"
+      },
+      {
+        "name": "The Lift On Hover Rule",
+        "body": "Only the hovered result lifts; the rest of the list stays still. No resting card carries a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep the obi rail at 64px and full height on the main window, and let progress be the rail filling, not a separate progress bar.",
+      "**Do** set every compared or counted number in Bahnschrift with tabular figures, and number songs as three-digit catalog numbers.",
+      "**Do** keep result rows at one fixed scale with the spec line in fixed columns and the running time right-aligned.",
+      "**Do** reference colour by dictionary key (Brush.*) so light and dark stay a key-for-key swap.",
+      "**Do** keep picked (brand circle + check), skipped (warning glyph) and no-result (danger cross) visually distinct in both hue and shape.",
+      "**Do** gate every animation behind Windows \"Show animations\" and keep durations within 100–420ms."
+    ],
+    "donts": [
+      "**Don't** build the category default of grey sidebar, white cards and one purple button; the purple belongs to the band.",
+      "**Don't** introduce a second accent hue for marks or emphasis; the picked mark is brand purple so it does not collide with the warning and danger status colours.",
+      "**Don't** give resting cards a shadow or let more than the hovered result move.",
+      "**Don't** use Bahnschrift for prose or Segoe UI for numbers.",
+      "**Don't** hard-code hex in views or converters when a theme key exists."
+    ]
+  }
+}

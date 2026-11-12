@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Version>3.0.0</Version>
+    <FileVersion>3.0.0.0</FileVersion>
+    <Authors>TX-Breaker</Authors>
+    <Company>TX-Breaker</Company>
+    <Product>Phonexis</Product>
+    <Description>Batch YouTube search from text files - pick the right video for every song.</Description>
+    <Copyright>Copyright © 2026 TX-Breaker</Copyright>
+    <AssemblyName>Phonexis</AssemblyName>
+    <RootNamespace>Phonexis</RootNamespace>
+    <ApplicationIcon>Resources\Images\phonexis.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4314.35" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
+    <PackageReference Include="YoutubeExplode" Version="6.6.3" />
+    <PackageReference Include="YoutubeExplode.Converter" Version="6.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\phonexis.ico" />
+    <Resource Include="Resources\Images\logo.png" />
+    <EmbeddedResource Include="Resources\i18n\*.json" />
+  </ItemGroup>
+
+</Project>
